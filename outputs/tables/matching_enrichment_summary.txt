@@ -1,0 +1,99 @@
+===================================================================
+  MATCHING ENRICHMENT SUMMARY — Phase 1
+  Generated : 2026-04-18 13:15:09
+  Script    : scripts/06_enrich_matching_and_rebuild_dataset.R
+===================================================================
+
+--- SOURCE FILES USED ---
+  Billboard     : data/raw/BillboardFromLast20/billboardHot100_1999-2019.csv
+  songAttributes: data/raw/BillboardFromLast20/songAttributes_1999-2019.csv
+
+--- BASELINE (before enrichment) ---
+  Baseline charted count   : 3618
+  Baseline noncharted count: 125127
+  Baseline total rows      : 128745
+  Baseline class ratio 0:1 : 34.6 :1
+
+--- DEDUPLICATION ---
+  Billboard raw rows          : 97225
+  Billboard unique songs      : 7213
+  songAttributes raw rows     : 154931
+  songAttributes unique songs : 128745
+
+--- MATCHING PASSES ---
+   pass
+ Pass 1
+ Pass 2
+ Pass 3
+ Pass 4
+                                                                            rule
+              Exact: clean_basic(title) + clean_basic(primary_artist) [baseline]
+      Exact: normalize_title (strips version tags + feat.) + clean_basic(artist)
+ Exact: normalize_title + normalize_artist (removes accents + feat. from artist)
+   Fuzzy: adist(norm_title) ≤ 1, within same normalize_artist, single best match
+ new_matches cumulative_charted
+        3618               3618
+         424               4042
+           0               4042
+           6               4048
+
+--- ENRICHED RESULT ---
+  Enriched charted count      : 4079
+  Enriched noncharted count   : 124666
+  Additional charted recovered: 461
+  Billboard songs matched     : 4048
+  Billboard songs unmatched   : 3165 (charted but not in songAttributes)
+  Enriched class ratio 0:1    : 30.6 :1
+  Still highly imbalanced     : YES — imbalance > 10:1, balancing needed for modeling
+
+--- EXAMPLES: RECOVERED MATCHES (PASS 2 — title normalization) ---
+  [1] bill_name_raw=2 Reasons | bill_artist_raw=Trey Songz | attr_name_raw=2 Reasons (feat. T.I.) | attr_artist_raw=Trey Songz
+  [2] bill_name_raw=24/7 | bill_artist_raw=Meek Mill | attr_name_raw=24/7 (feat. Ella Mai) | attr_artist_raw=Meek Mill
+  [3] bill_name_raw=2U | bill_artist_raw=David Guetta | attr_name_raw=2U (feat. Justin Bieber) | attr_artist_raw=David Guetta
+
+--- EXAMPLES: RECOVERED MATCHES (PASS 3 — artist normalization) ---
+  (none)
+
+--- EXAMPLES: RECOVERED MATCHES (PASS 4 — fuzzy title) ---
+  [1] bill_name_raw=Hero/Heroine | bill_artist_raw=Boys Like Girls | attr_name_raw=Hero / Heroine | attr_artist_raw=Boys Like Girls | match_note=fuzzy title: adist=1
+  [2] bill_name_raw=Hot 2Nite | bill_artist_raw=New Edition | attr_name_raw=Hot 2 Nite | attr_artist_raw=New Edition | match_note=fuzzy title: adist=1
+  [3] bill_name_raw=I. Crawl | bill_artist_raw=Childish Gambino | attr_name_raw=I.Crawl | attr_artist_raw=Childish Gambino | match_note=fuzzy title: adist=1
+
+--- EXAMPLES: MANUAL REVIEW CANDIDATES ---
+  [1] bill_name_raw=5 Star | bill_artist_raw=Yo Gotti | candidate_attr_name=5 Years | candidate_attr_artist=Yo Gotti | adist_score=3 | reason_not_accepted=adist 2-3: plausible but not auto-acc...
+  [2] bill_name_raw=A.D.I.D.A.S. | bill_artist_raw=Killer Mike | candidate_attr_name=Animal | candidate_attr_artist=Killer Mike | adist_score=3 | reason_not_accepted=adist 2-3: plausible but not auto-acc...
+  [3] bill_name_raw=Anna | bill_artist_raw=Molly | candidate_attr_name=Laura | candidate_attr_artist=Molly | adist_score=3 | reason_not_accepted=adist 2-3: plausible but not auto-acc...
+
+--- RISKY RULES DELIBERATELY REJECTED ---
+  Rule: Title-only matching across different artists
+  Reason: Known false positives in this dataset.
+    e.g. 'truth hurts' (Lizzo) matched Elephant Man
+    e.g. 'bad guy' (Billie Eilish) matched Pastor Troy / Eminem
+    e.g. 'senorita' (Shawn Mendes) matched Gorilla Zoe
+
+  Rule: Artist splitting on 'and'/'&' for artist normalization
+  Reason: Artist names like 'Fitz And The Tantrums' contain 'and' legitimately.
+    Splitting would break real matches more often than it fixes new ones.
+
+--- ASSUMPTIONS ---
+  - Billboard primary artist = text before first comma in Artists field.
+  - songAttributes is already one row per (Name, Artist) pair after dedup.
+  - A match across any pass marks the attr row as charted=1.
+  - Multiple attr rows can map to the same Billboard song (all marked charted=1).
+  - The 'Lil Nas,' trailing-comma artifact is a known data issue not auto-fixed.
+    (Safe fix would require manual mapping; auto-fix risks false positives.)
+
+--- ALIGNMENT WITH ORIGINAL PROPOSAL ---
+  - All 9 audio features present in enriched dataset.
+  - charted outcome column present (binary 0/1).
+  - More charted songs recovered = better class balance for modeling.
+  - Class ratio improved from 34.6 :1 to 30.6 :1
+
+--- SAFETY VERDICT ---
+  This is a SAFE improvement.
+  - All accepted matches came from documented passing rules.
+  - No modeling, PCA, hypothesis testing, or EDA was performed.
+  - No existing master datasets were overwritten.
+  - Every accepted match required same normalized artist (no cross-artist matching).
+  - Fuzzy matching limited to adist ≤ 1 (at most 1 character edit).
+

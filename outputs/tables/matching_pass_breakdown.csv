@@ -1,0 +1,5 @@
+"pass","rule","matches","new_matches","cumulative_charted"
+"Pass 1","Exact: clean_basic(title) + clean_basic(primary_artist) [baseline]",3618,3618,3618
+"Pass 2","Exact: normalize_title (strips version tags + feat.) + clean_basic(artist)",424,424,4042
+"Pass 3","Exact: normalize_title + normalize_artist (removes accents + feat. from artist)",0,0,4042
+"Pass 4","Fuzzy: adist(norm_title) ≤ 1, within same normalize_artist, single best match",6,6,4048

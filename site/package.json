@@ -1,0 +1,12 @@
+{
+  "name": "signals-of-success-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static GitHub Pages portfolio site for the Spotify/Billboard analytics project.",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 4173",
+    "preview": "python -m http.server 4173",
+    "build": "node -e \"console.log('Static site: no build step required. Deploy the site folder as-is.')\""
+  }
+}

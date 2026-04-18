@@ -1,0 +1,251 @@
+"song_name","artist","true_charted","prob_logistic_regression_enriched_","pred_logistic_regression_enriched_","prob_lda","pred_lda","prob_knn","pred_knn","prob_decision_tree","pred_decision_tree","prob_random_forest","pred_random_forest"
+"05 Clubber Skit","Pastor Troy",0,0.019064,0,0.04645,0,0.032258,0,0.200335,0,0.16,0
+"3,6,9","Ying Yang Twins",0,0.088031,0,0.140027,0,0.258065,0,0.200335,0,0.298,0
+"4:20","Method Man",0,0.54701,1,0.563772,1,0.580645,1,0.561041,1,0.61,1
+"About You","Mary J. Blige",0,0.678195,1,0.654252,1,0.612903,1,0.650589,1,0.612,1
+"Ain't I (Remix)(Feat. T.I.)","Yung L.A.",0,0.465071,0,0.467956,0,0.612903,1,0.650589,1,0.562,1
+"Ain't Mine","Migos",0,0.471664,0,0.495914,0,0.612903,1,0.393365,0,0.604,1
+"All My Friends","Owl City",0,0.702903,1,0.678205,1,0.709677,1,0.650589,1,0.742,1
+"All Night Long","Boyz II Men",0,0.498572,0,0.506458,1,0.580645,1,0.393365,0,0.522,1
+"All She Wants To Do Is Dance","Don Henley",0,0.291522,0,0.354622,0,0.096774,0,0.200335,0,0.184,0
+"All the Best","Zac Brown Band",0,0.395949,0,0.434231,0,0.322581,0,0.200335,0,0.18,0
+"Almost Like Being There","Murphy Lee",0,0.702919,1,0.669232,1,0.709677,1,0.650589,1,0.62,1
+"Angel - Afterglow Live Version","Sarah McLachlan",0,0.046171,0,0.081088,0,0.032258,0,0.200335,0,0.052,0
+"As Long As You Love Me","Justin Bieber",1,0.6657,1,0.639943,1,0.677419,1,0.650589,1,0.814,1
+"Baby One More Time (Glee Cast Version)","Glee Cast",0,0.555723,1,0.529573,1,0.677419,1,0.650589,1,0.7,1
+"Back To Tennessee","Billy Ray Cyrus",0,0.738042,1,0.708957,1,0.645161,1,0.650589,1,0.662,1
+"Bait","Wale",0,0.705515,1,0.690992,1,0.774194,1,0.650589,1,0.832,1
+"Bawitdaba","Kid Rock",0,0.529464,1,0.554471,1,0.709677,1,0.650589,1,0.492,0
+"Be A Good Boy","Janet",0,0.000127,0,0.001021,0,0.064516,0,0.200335,0,0.158,0
+"Beautiful Star Of Bethlehem","Patty Loveless",0,0.571051,1,0.563238,1,0.258065,0,0.561041,1,0.434,0
+"Bella (She's All I Ever Had)","Ricky Martin",0,0.568249,1,0.573673,1,0.548387,1,0.650589,1,0.69,1
+"B.E.T. Cypher","ScHoolboy Q",0,0.429348,0,0.473375,0,0.354839,0,0.650589,1,0.376,0
+"Better Off Alone","Katharine McPhee",0,0.617426,1,0.609759,1,0.741935,1,0.561041,1,0.594,1
+"Bibbidi-Bobbidi-Boo (The Magic Song)","Perry Como",0,0.080949,0,0.140771,0,0.096774,0,0.200335,0,0.042,0
+"Bittersweet","Saving Abel",0,0.728347,1,0.701372,1,0.774194,1,0.650589,1,0.828,1
+"Blue Suede Shoes - Live at The International Hotel, Las Vegas, NV - 8/22/69 Dinner Show","Elvis Presley",0,0.099591,0,0.153246,0,0.290323,0,0.231047,0,0.208,0
+"Blues Latino","Santana",0,0.012954,0,0.068424,0,0.16129,0,0.200335,0,0.162,0
+"Boombox","The Lonely Island",0,0.690146,1,0.678103,1,0.548387,1,0.650589,1,0.644,1
+"Boss","Rick Ross",0,0.332909,0,0.399798,0,0.419355,0,0.561041,1,0.346,0
+"Brat","Green Day",0,0.618142,1,0.616185,1,0.612903,1,0.650589,1,0.564,1
+"Break My Heart","Estelle",0,0.455383,0,0.494943,0,0.516129,1,0.561041,1,0.386,0
+"Breathing","Yellowcard",0,0.648394,1,0.631426,1,0.580645,1,0.650589,1,0.43,0
+"Bruised","Ben Folds",0,0.482132,0,0.498684,0,0.645161,1,0.393365,0,0.466,0
+"Bruises (feat. Ashley Monroe)","Train",1,0.691454,1,0.665938,1,0.806452,1,0.650589,1,0.758,1
+"Calling All My Ladies","Bobby Valentino",0,0.286605,0,0.343046,0,0.451613,0,0.200335,0,0.28,0
+"Celebrate (feat. Travis Scott & Post Malone)","DJ Khaled",1,0.67901,1,0.655404,1,0.709677,1,0.650589,1,0.65,1
+"Children Are the Future","Beanie Sigel",0,0.498473,0,0.528485,1,0.548387,1,0.561041,1,0.402,0
+"Cocaine Carolina","Cash Cash",0,0.136082,0,0.202805,0,0.129032,0,0.200335,0,0.106,0
+"Could This Be Love - Mick G Mix","Jennifer Lopez",0,0.359219,0,0.407451,0,0.677419,1,0.200335,0,0.434,0
+"Covered Wagon","Miranda Lambert",0,0.541567,1,0.559052,1,0.612903,1,0.650589,1,0.598,1
+"Desi Pmc (Intro)","Panjabi MC",0,0.018911,0,0.05884,0,0.096774,0,0.200335,0,0.154,0
+"Digital Lion","James Blake",0,0.063529,0,0.177845,0,0.064516,0,0.200335,0,0.096,0
+"Dignity - Richard Vission Remix","Hilary Duff",0,0.151546,0,0.298221,0,0.129032,0,0.231047,0,0.198,0
+"Dilated Junkies","Dilated Peoples",0,0.214377,0,0.291857,0,0.387097,0,0.393365,0,0.314,0
+"Dilemma","Nelly",1,0.512402,1,0.528685,1,0.516129,1,0.561041,1,0.626,1
+"Do I Ever Cross Your Mind","Randy Travis",0,0.079005,0,0.134835,0,0.064516,0,0.200335,0,0.074,0
+"Doesn't Matter","Daniel Powter",0,0.806447,1,0.766785,1,0.741935,1,0.650589,1,0.778,1
+"Doin Dat","JT Money",0,0.446966,0,0.474165,0,0.645161,1,0.393365,0,0.484,0
+"Down And Out","Cam'Ron",1,0.685691,1,0.664193,1,0.483871,0,0.650589,1,0.542,1
+"Drifting Heart","Chuck Berry",0,0.288747,0,0.350154,0,0.258065,0,0.200335,0,0.314,0
+"Drinks","Twista",0,0.675075,1,0.662067,1,0.580645,1,0.650589,1,0.584,1
+"D'yer Mak'er","Puddle Of Mudd",0,0.580283,1,0.590968,1,0.645161,1,0.650589,1,0.428,0
+"Eve","Eve",0,0.659681,1,0.646135,1,0.645161,1,0.650589,1,0.798,1
+"Everyday - Soul Town Mix","Angie Stone",0,0.496739,0,0.535396,1,0.548387,1,0.231047,0,0.23,0
+"Everywhere I Go","Lil Rob",0,0.750985,1,0.720229,1,0.612903,1,0.650589,1,0.718,1
+"Face It","Moby",0,0.579144,1,0.635055,1,0.483871,0,0.231047,0,0.336,0
+"Far Far","M.I.A.",0,0.638688,1,0.629496,1,0.612903,1,0.561041,1,0.67,1
+"Fashionably Late","Curren$Y",0,0.370328,0,0.435019,0,0.258065,0,0.561041,1,0.234,0
+"Feel It In My Bones (feat. Tegan Rain Quin & Sara Quin)","Tiesto",0,0.59377,1,0.600665,1,0.483871,0,0.650589,1,0.674,1
+"Find You Again","Kevin Gates",0,0.424862,0,0.466043,0,0.580645,1,0.650589,1,0.518,1
+"Firefly","Tony Bennett",0,0.528104,1,0.541385,1,0.451613,0,0.561041,1,0.458,0
+"First - Demo","Cold",0,0.681594,1,0.659107,1,0.709677,1,0.650589,1,0.792,1
+"Fly Girl","will.i.am",0,0.421962,0,0.463536,0,0.612903,1,0.561041,1,0.65,1
+"Fuck a Mixtape Nigga","T.I.",0,0.361114,0,0.413481,0,0.225806,0,0.561041,1,0.424,0
+"Full Time","Yo Gotti",0,0.502146,1,0.48881,0,0.516129,1,0.393365,0,0.454,0
+"Giggling Again for No Reason","Alanis Morissette",0,0.514749,1,0.539198,1,0.580645,1,0.561041,1,0.416,0
+"Girl Power - Karaoke Vocal","The Cheetah Girls",0,0.03505,0,0.126951,0,0.032258,0,0.200335,0,0.068,0
+"Girls! Girls! Girls! Finale","Elvis Presley",0,0.335328,0,0.381567,0,0.451613,0,0.200335,0,0.216,0
+"Give Your Heart a Break","Demi Lovato",1,0.792181,1,0.751477,1,0.709677,1,0.650589,1,0.942,1
+"Giving It All To You","Liz Phair",0,0.730183,1,0.704384,1,0.709677,1,0.650589,1,0.762,1
+"Go Go","The Black Eyed Peas",0,0.652852,1,0.642471,1,0.548387,1,0.650589,1,0.596,1
+"Going Where the Lonely Go","Billy Ray Cyrus",0,0.341863,0,0.432191,0,0.741935,1,0.231047,0,0.436,0
+"Gold Bottles (feat. Young Deji) [Produced by Statik Selektah, Co-Produced by Marv4MoBeats]","Wiz Khalifa",0,0.576336,1,0.576013,1,0.645161,1,0.650589,1,0.628,1
+"G.O.M.D.","J. Cole",0,0.332097,0,0.386162,0,0.419355,0,0.200335,0,0.312,0
+"Greatest Ones (feat. King Issa)","Birdman",0,0.633838,1,0.629273,1,0.451613,0,0.561041,1,0.678,1
+"Guilt","NERO",0,0.608826,1,0.606701,1,0.645161,1,0.650589,1,0.504,1
+"Gulls - Live at the iTunes Festival","David Gray",0,0.09463,0,0.136433,0,0.032258,0,0.200335,0,0.166,0
+"Happy Holiday","Bing Crosby",0,0.44578,0,0.462721,0,0.258065,0,0.393365,0,0.302,0
+"Happy Now?","No Doubt",0,0.560209,1,0.56221,1,0.709677,1,0.650589,1,0.686,1
+"Hate Me","Saliva",0,0.724243,1,0.700979,1,0.709677,1,0.650589,1,0.794,1
+"Have A Nice Day - Main Version - Clean","Kelis",0,0.262547,0,0.298078,0,0.290323,0,0.393365,0,0.242,0
+"Have Yourself a Merry Little Christmas","Jessie James",0,0.41244,0,0.444421,0,0.387097,0,0.561041,1,0.446,0
+"Heartbreaker (Feat. Lovefoxxx)","Steve Aoki",0,0.694429,1,0.682768,1,0.677419,1,0.231047,0,0.378,0
+"Heaven is You","NewSong",0,0.495799,0,0.514539,1,0.419355,0,0.561041,1,0.356,0
+"Hero Of The Faith","NewSong",0,0.259266,0,0.320223,0,0.387097,0,0.200335,0,0.196,0
+"Herringbone Jones","Lil Scrappy",0,0.329004,0,0.40622,0,0.580645,1,0.200335,0,0.518,1
+"High Lonesome Sound","Vince Gill",0,0.285708,0,0.34427,0,0.419355,0,0.200335,0,0.198,0
+"Hippy Hill","Grouplove",0,0.431013,0,0.467164,0,0.612903,1,0.200335,0,0.636,1
+"Hit the Floor (feat. Pitbull)","Twista",1,0.646242,1,0.631959,1,0.645161,1,0.231047,0,0.46,0
+"Hood Stuck","Ludacris",0,0.487303,0,0.527314,1,0.548387,1,0.561041,1,0.526,1
+"Hosanna","Kirk Franklin",0,0.359349,0,0.387883,0,0.387097,0,0.650589,1,0.434,0
+"How I Roll","Britney Spears",0,0.698094,1,0.681873,1,0.483871,0,0.231047,0,0.488,0
+"I Could Have Danced All Night","Andy Williams",0,0.202812,0,0.267178,0,0.258065,0,0.200335,0,0.13,0
+"I Got The Lord On My Side","Reba",0,0.527344,1,0.527228,1,0.419355,0,0.650589,1,0.538,1
+"I Lied","Dave Hollister",0,0.50035,1,0.540745,1,0.612903,1,0.231047,0,0.198,0
+"I Love It When You Cry (Moxoki) - Radio Edit","Steve Aoki",0,0.700364,1,0.659676,1,0.741935,1,0.650589,1,0.754,1
+"I Rise","Madonna",0,0.613908,1,0.608593,1,0.645161,1,0.561041,1,0.708,1
+"I Wanna Work With Mom","James Newton Howard",0,0.001006,0,0.01021,0,0,0,0.200335,0,0.11,0
+"If I Fell","Reba",0,0.545632,1,0.554648,1,0.625,1,0.561041,1,0.578,1
+"I'm Every Woman - Live from The Bodyguard Tour","Houston",0,0.26542,0,0.314772,0,0.548387,1,0.393365,0,0.436,0
+"I'm Leavin'","Elvis Presley",0,0.072781,0,0.129682,0,0.064516,0,0.200335,0,0.058,0
+"I'm Movin' On","Cash Cash",0,0.517359,1,0.539661,1,0.645161,1,0.231047,0,0.374,0
+"I'm Ragged but I'm Right","Cash Cash",0,0.071607,0,0.12972,0,0.096774,0,0.200335,0,0.068,0
+"Indifference","Chevelle",0,0.826064,1,0.774586,1,0.774194,1,0.650589,1,0.66,1
+"Intro","Jadakiss",0,0.336235,0,0.399206,0,0.451613,0,0.200335,0,0.358,0
+"Introduction: Also Sprach Zarathustra (Theme From 2001: A Space Odyssey) - The Afternoon Show, 2012 Mix","Elvis Presley",0,0.009742,0,0.046819,0,0.064516,0,0.200335,0,0.124,0
+"Iris - Demo","Goo Goo Dolls",0,0.6488,1,0.636937,1,0.612903,1,0.561041,1,0.562,1
+"Island Boy","Baha Men",0,0.134218,0,0.209472,0,0.064516,0,0.200335,0,0.116,0
+"It Could've Been So Good","Collin Raye",0,0.277895,0,0.336451,0,0.225806,0,0.200335,0,0.258,0
+"Jesus Loves Me","Deborah Cox",0,0.690484,1,0.669363,1,0.612903,1,0.650589,1,0.644,1
+"Jim Jones Speaks On Dipset Movement","Jim Jones",0,0.006135,0,0.021686,0,0,0,0.200335,0,0.004,0
+"Jingle Bell Rock - Johns Version","Daryl Hall John Oates",0,0.650322,1,0.636562,1,0.774194,1,0.650589,1,0.664,1
+"Jumping Rooftops","Angels",0,0.004242,0,0.028329,0,0.096774,0,0.200335,0,0.196,0
+"Just Be Good to Me","Deborah Cox",0,0.469274,0,0.510048,1,0.645161,1,0.231047,0,0.416,0
+"Keep Marchin' - Live In Paris","Raphael Saadiq",0,0.360591,0,0.386429,0,0.290323,0,0.650589,1,0.364,0
+"Keyshia Cole","Field Mob",0,0.221116,0,0.296389,0,0.451613,0,0.200335,0,0.188,0
+"Kill Kill","Juvenile",0,0.677543,1,0.660373,1,0.548387,1,0.650589,1,0.724,1
+"La Manic - Live at Québec City Show, 2012","Leonard Cohen",0,0.08301,0,0.124187,0,0.129032,0,0.200335,0,0.084,0
+"Label Shouts (Slowed & Chopped)","Paul Wall",0,0.169877,0,0.231628,0,0.258065,0,0.200335,0,0.296,0
+"Last Words (Interlude)","Xzibit",0,0.012316,0,0.067285,0,0.064516,0,0.200335,0,0.188,0
+"Late Night Special","Pretty Ricky",0,0.771541,1,0.740056,1,0.677419,1,0.650589,1,0.812,1
+"Latin Interlude - Live at the Workplay Theatre, Birmingham, AL - June 2004","Train",0,0.052582,0,0.095354,0,0.129032,0,0.200335,0,0.058,0
+"Let It Rain","Kris Allen",0,0.69431,1,0.672885,1,0.548387,1,0.650589,1,0.716,1
+"Let's Do This","Hannah Montana",0,0.765728,1,0.731613,1,0.580645,1,0.650589,1,0.676,1
+"Let's Love While We Can","Andy Williams",0,0.190793,0,0.250689,0,0.16129,0,0.200335,0,0.102,0
+"Letter To The System","T.I.",0,0.537755,1,0.554515,1,0.677419,1,0.561041,1,0.658,1
+"Liar - Live At The Rainbow, London / March 1974","Queen",0,0.237974,0,0.274398,0,0.354839,0,0.650589,1,0.316,0
+"Lie With Me","Lady Antebellum",0,0.602291,1,0.595883,1,0.709677,1,0.561041,1,0.724,1
+"Lights, Camera, Action","The Alchemist",0,0.326367,0,0.379051,0,0.387097,0,0.650589,1,0.282,0
+"Little Bit Of This, Little Bit Of That... (Interlude)","Angie Stone",0,0.203673,0,0.296377,0,0.354839,0,0.200335,0,0.126,0
+"Looking Down On You","Ron Browz",0,0.30895,0,0.377583,0,0.322581,0,0.561041,1,0.334,0
+"Lotus Lovers - Studio","Kenny G",0,0.206825,0,0.387758,0,0.16129,0,0.231047,0,0.34,0
+"Louisiana Bayou - Live at Red Rocks Amphitheatre, Morrison, CO - September 2005","Dave Matthews Band",0,0.375691,0,0.405423,0,0.419355,0,0.231047,0,0.32,0
+"Love Done Live Here (feat. Meek Mill)","DJ Drama",0,0.594969,1,0.606547,1,0.580645,1,0.650589,1,0.57,1
+"Lover Let Me In","Maria Mena",0,0.531085,1,0.545702,1,0.516129,1,0.561041,1,0.458,0
+"Loyalty","Birdman",0,0.119706,0,0.186398,0,0.290323,0,0.200335,0,0.134,0
+"Luciforms","The Mars Volta",0,0.296193,0,0.371146,0,0.419355,0,0.231047,0,0.256,0
+"Marcetta","Gigi D'Agostino",0,0.161337,0,0.312135,0,0.064516,0,0.231047,0,0.076,0
+"Mary, Did You Know","Mary J. Blige",0,0.225125,0,0.289026,0,0.16129,0,0.200335,0,0.106,0
+"Me Neither","Brad Paisley",1,0.245245,0,0.307573,0,0.419355,0,0.200335,0,0.386,0
+"Medley: Goodnight Sweetheart Goodnight/Johnny B. Goode/Let It Rock/School Day - Live At Walled Lake Casino, Detroit, MI/1963","Chuck Berry",0,0.18191,0,0.220442,0,0.258065,0,0.393365,0,0.132,0
+"Medley - Live Version","Thalia",0,0.288437,0,0.314162,0,0.258065,0,0.650589,1,0.31,0
+"Millennium","OutKast",0,0.625285,1,0.623632,1,0.612903,1,0.650589,1,0.518,1
+"Money Steady Coming","Soulja Boy Tell 'em",0,0.546634,1,0.548157,1,0.548387,1,0.393365,0,0.552,1
+"More Fun Than Sin","NewSong",0,0.483998,0,0.513452,1,0.645161,1,0.561041,1,0.6,1
+"More Than I Can Bear","Kirk Franklin",0,0.476912,0,0.504078,1,0.548387,1,0.650589,1,0.562,1
+"Moving Mars","Tiesto",0,0.044253,0,0.158494,0,0.096774,0,0.231047,0,0.136,0
+"My B***h","The Game",0,0.186607,0,0.24355,0,0.16129,0,0.393365,0,0.138,0
+"My Broken Heart Belongs To You","Willie Nelson",0,0.411608,0,0.44226,0,0.548387,1,0.561041,1,0.382,0
+"My Sweetie","Wale",0,0.506463,1,0.520688,1,0.580645,1,0.393365,0,0.452,0
+"MYB (feat. Starlito)","Kevin Gates",0,0.51999,1,0.5303,1,0.354839,0,0.393365,0,0.478,0
+"Narration 3","Cash Cash",0,0.032441,0,0.068404,0,0.064516,0,0.200335,0,0.072,0
+"Never Die (feat. Jadakiss, Cee Lo Green, Nipsey Hussle & Young Jeezy)","DJ Drama",0,0.421677,0,0.47531,0,0.322581,0,0.650589,1,0.308,0
+"Nights I Can't Remember, Friends I'll Never Forget","Toby Keith",0,0.63621,1,0.626986,1,0.612903,1,0.561041,1,0.65,1
+"Nothing to Thing About","French Montana",0,0.131914,0,0.198458,0,0.419355,0,0.200335,0,0.164,0
+"Now Behold the Lamb","Kirk Franklin",0,0.526158,1,0.535855,1,0.548387,1,0.561041,1,0.564,1
+"Now That I Found You","Carly Rae Jepsen",0,0.691361,1,0.672384,1,0.645161,1,0.650589,1,0.824,1
+"Oh Lets Do It - Freestyle","Meek Mill",0,0.514477,1,0.527743,1,0.483871,0,0.650589,1,0.704,1
+"One For My Baby (And One More For The Road) - Remastered","Frank Sinatra",0,0.048479,0,0.095441,0,0.129032,0,0.200335,0,0.062,0
+"O.V. (feat. Lord Infamous)","Three 6 Mafia",0,0.549026,1,0.567618,1,0.580645,1,0.561041,1,0.518,1
+"Over the Mountain","Ozzy Osbourne",0,0.574933,1,0.585582,1,0.645161,1,0.650589,1,0.588,1
+"Pass the Pain","Sunny Sweeney",0,0.50236,1,0.524084,1,0.548387,1,0.200335,0,0.34,0
+"Penetration (feat. Naughty By Nature)","Next",0,0.366694,0,0.417329,0,0.354839,0,0.200335,0,0.136,0
+"Perfect","Angie Stone",0,0.272757,0,0.346221,0,0.548387,1,0.200335,0,0.34,0
+"Please Don't Stay","R.L.",0,0.123044,0,0.264103,0,0.193548,0,0.200335,0,0.16,0
+"Poor Black Mattie T2 - electric","R.L.",0,0.220128,0,0.304185,0,0.419355,0,0.200335,0,0.122,0
+"Porcelain, Kapitel 7","Moby",0,0.001622,0,0.008114,0,0,0,0.200335,0,0.022,0
+"Proud To Be Here","Trace Adkins",0,0.61927,1,0.602677,1,0.612903,1,0.650589,1,0.484,0
+"Put It In My Pocket (feat. Rocko)","T.I.",0,0.707224,1,0.683349,1,0.645161,1,0.650589,1,0.764,1
+"Put Ya Hands Up (Jadakiss diss)","Beanie Sigel",0,0.34717,0,0.400502,0,0.451613,0,0.650589,1,0.458,0
+"Qué Vas a Hacer?","Daddy Yankee",0,0.627469,1,0.626277,1,0.709677,1,0.561041,1,0.604,1
+"Raise The Barn","Keith Urban",0,0.632563,1,0.628608,1,0.645161,1,0.650589,1,0.64,1
+"Readymade","Beck",0,0.208566,0,0.352169,0,0.193548,0,0.231047,0,0.242,0
+"Recover","Eli Young Band",0,0.777027,1,0.742775,1,0.612903,1,0.650589,1,0.57,1
+"Recovery","Justin Bieber",1,0.742487,1,0.701934,1,0.59375,1,0.650589,1,0.744,1
+"Reggaeton Latino - Chosen Few Remix","N.O.R.E.",0,0.713357,1,0.697613,1,0.451613,0,0.650589,1,0.522,1
+"Relax Your Mind (feat. Faith Evans) - LP (Radio) Version - Recall","Boyz II Men",0,0.772492,1,0.732946,1,0.741935,1,0.650589,1,0.836,1
+"Right Here - Live From Mohegan Sun","Staind",0,0.462361,0,0.448205,0,0.322581,0,0.650589,1,0.338,0
+"Ring of Fire - Live at The Roxy, Hollywood, CA, March 1986","Dwight Yoakam",0,0.270765,0,0.304611,0,0.354839,0,0.393365,0,0.384,0
+"Road To Nowhere","Los Lonely Boys",0,0.707012,1,0.681941,1,0.774194,1,0.650589,1,0.718,1
+"Rockin' the Suburbs - 'Over the Hedge' Version","Ben Folds",0,0.492426,0,0.518043,1,0.612903,1,0.561041,1,0.506,1
+"Saferwaters","Chevelle",0,0.722548,1,0.697253,1,0.709677,1,0.650589,1,0.68,1
+"Sail On - Spotify Interview","Lionel Richie",0,0.003381,0,0.013236,0,0,0,0.200335,0,0.02,0
+"Samsonite Man","Alicia Keys",0,0.464393,0,0.499015,0,0.677419,1,0.561041,1,0.484,0
+"Save Our Last Goodbye","Disturbed",0,0.511183,1,0.538062,1,0.483871,0,0.650589,1,0.294,0
+"Say Something","Frankie J",0,0.468964,0,0.499519,0,0.451613,0,0.200335,0,0.518,1
+"Sellin' Dreams (feat. Chris Brown)","Big Sean",0,0.410051,0,0.435511,0,0.483871,0,0.393365,0,0.41,0
+"Separation Anxiety - Live-Milwaukee","American Hi",0,0.344426,0,0.377034,0,0.387097,0,0.393365,0,0.604,1
+"Set It Off","Young Gunz",0,0.649829,1,0.644848,1,0.387097,0,0.650589,1,0.53,1
+"Shadow On the Wall - Live at Benaroya Hall, Seattle, WA - November 2010","Brandi Carlile",0,0.062953,0,0.098882,0,0.064516,0,0.200335,0,0.11,0
+"She Said Stop (feat. Sean Kingston)","Nipsey Hussle",0,0.272209,0,0.328447,0,0.419355,0,0.393365,0,0.318,0
+"She Thinks I Still Care - Take 10","Elvis Presley",0,0.111189,0,0.1781,0,0.064516,0,0.200335,0,0.066,0
+"She's a Machine","Elvis Presley",0,0.191477,0,0.251796,0,0.129032,0,0.200335,0,0.15,0
+"Si Yo Fuera Tu Hombre","Nicky Jam",0,0.306592,0,0.33318,0,0.451613,0,0.393365,0,0.218,0
+"Silent Night","Billy Gilman",0,0.243191,0,0.306625,0,0.322581,0,0.200335,0,0.18,0
+"Sinner's Prayer","Lady Gaga",0,0.45564,0,0.483565,0,0.516129,1,0.561041,1,0.612,1
+"So What","B.o.B",0,0.372537,0,0.405445,0,0.419355,0,0.393365,0,0.404,0
+"Soleil Soleil","Lara Fabian",0,0.369718,0,0.412532,0,0.354839,0,0.200335,0,0.194,0
+"Someday - (Place In The Sun) (feat. Ella Eyre)","Tinie Tempah",0,0.601725,1,0.613433,1,0.612903,1,0.650589,1,0.518,1
+"Someone To Save You","OneRepublic",0,0.650424,1,0.63084,1,0.483871,0,0.650589,1,0.67,1
+"Somethin' Stupid","Frank Sinatra",0,0.158081,0,0.218966,0,0.225806,0,0.200335,0,0.28,0
+"Sounds Of Summer","Dierks Bentley",0,0.440536,0,0.466357,0,0.580645,1,0.393365,0,0.488,0
+"Spend the Night","Scarface",0,0.684625,1,0.666015,1,0.741935,1,0.650589,1,0.836,1
+"Startin Somethin","Meek Mill",0,0.586279,1,0.594729,1,0.548387,1,0.561041,1,0.544,1
+"Still","Hunter Hayes",0,0.238947,0,0.299054,0,0.387097,0,0.200335,0,0.274,0
+"Straight Outta Line - Live","Godsmack",0,0.17134,0,0.27287,0,0.290323,0,0.231047,0,0.19,0
+"Straight to the Top","Bone Thugs",0,0.002546,0,0.016292,0,0.064516,0,0.200335,0,0.082,0
+"Strawberry Weed","Caesars",0,0.447693,0,0.542104,1,0.387097,0,0.231047,0,0.376,0
+"Sua cara (feat. Anitta & Pabllo Vittar)","Major Lazer",0,0.733877,1,0.707643,1,0.677419,1,0.650589,1,0.68,1
+"Sunrise In The Morning","Frank Sinatra",0,0.239041,0,0.302689,0,0.096774,0,0.200335,0,0.198,0
+"Sunshine","Kart",0,0.783382,1,0.742447,1,0.774194,1,0.650589,1,0.752,1
+"Sweet By and By","Randy Travis",0,0.289342,0,0.327597,0,0.290323,0,0.200335,0,0.24,0
+"Sweet Transvestite (Glee Cast Version)","Glee Cast",0,0.74984,1,0.710061,1,0.709677,1,0.650589,1,0.55,1
+"Tall Up Tall Up","Elephant Man",0,0.294797,0,0.352521,0,0.419355,0,0.650589,1,0.408,0
+"Tell 'em","Master P",0,0.65073,1,0.647712,1,0.483871,0,0.650589,1,0.566,1
+"Tenement Funster - BBC Session / October 16th 1974, Maida Vale 4 Studio","Queen",0,0.351092,0,0.400638,0,0.451613,0,0.200335,0,0.39,0
+"The Believer - feat. John Legend","Common",0,0.555632,1,0.572458,1,0.709677,1,0.650589,1,0.734,1
+"The Clown","Reba",0,0.437903,0,0.463803,0,0.483871,0,0.200335,0,0.374,0
+"The Cure","Robbie Williams",0,0.448248,0,0.474022,0,0.548387,1,0.393365,0,0.394,0
+"The Dashboard","Chris Young",0,0.60547,1,0.597374,1,0.451613,0,0.650589,1,0.634,1
+"The Final Three - Score","James Newton Howard",0,0.005527,0,0.035975,0,0.096774,0,0.200335,0,0.108,0
+"The Game Sewed","The Game",0,0.395488,0,0.443532,0,0.387097,0,0.650589,1,0.46,0
+"The Ground Walks, with Time in a Box","Modest Mouse",0,0.692551,1,0.670783,1,0.645161,1,0.650589,1,0.598,1
+"The Jump Up - Album Version (Edited)","Benzino",0,0.747429,1,0.726295,1,0.451613,0,0.650589,1,0.678,1
+"The Longest Wave","Red Hot Chili Peppers",0,0.645356,1,0.629409,1,0.645161,1,0.561041,1,0.524,1
+"The Race Begins - Score","James Newton Howard",0,0.004542,0,0.032001,0,0.096774,0,0.200335,0,0.178,0
+"The Smokey Life","Leonard Cohen",0,0.149196,0,0.217117,0,0.16129,0,0.200335,0,0.224,0
+"The Very Thought Of You (with Ana Carolina)","Tony Bennett",0,0.103403,0,0.166491,0,0.129032,0,0.200335,0,0.288,0
+"There's No Home for You Here","The White Stripes",0,0.408401,0,0.439661,0,0.677419,1,0.393365,0,0.442,0
+"Time Bomb","311",0,0.458769,0,0.494582,0,0.741935,1,0.561041,1,0.608,1
+"Time Is Running Out - Live from Wembley Stadium","Muse",0,0.328131,0,0.356839,0,0.290323,0,0.231047,0,0.242,0
+"Turnin Me On","Jon B",0,0.337599,0,0.378968,0,0.322581,0,0.393365,0,0.308,0
+"Two Occasions (Live) - Live Version","Babyface",0,0.237319,0,0.297342,0,0.322581,0,0.200335,0,0.256,0
+"Uptown Funk","Mark Ronson",0,0.640322,1,0.633426,1,0.580645,1,0.561041,1,0.46,0
+"Vuelve","Reik",0,0.650474,1,0.626556,1,0.354839,0,0.561041,1,0.48,0
+"We Came To Smash - In A Black Tuxedo","Martin Solveig",0,0.795392,1,0.76433,1,0.741935,1,0.650589,1,0.538,1
+"We Deal With the Freak'n (intermission)","Solange",0,0.165113,0,0.240795,0,0.580645,1,0.200335,0,0.366,0
+"What Child Is This?","Glen Campbell",0,0.116316,0,0.180913,0,0.193548,0,0.200335,0,0.256,0
+"What You Need - Live at Barker Hangar, 1993","INXS",0,0.037065,0,0.089501,0,0.129032,0,0.200335,0,0.056,0
+"What'chu Like (feat. Tyrese)","Da Brat",1,0.366182,0,0.427198,0,0.387097,0,0.200335,0,0.336,0
+"What's Real (feat. Res)","Talib Kweli",0,0.703053,1,0.672391,1,0.774194,1,0.650589,1,0.682,1
+"Whiskey Can Can","Beck",0,0.070342,0,0.196564,0,0.096774,0,0.231047,0,0.13,0
+"White Christmas (with The Bobby Tucker Singers) - 78rpm Version","Frank Sinatra",0,0.041844,0,0.08677,0,0.096774,0,0.200335,0,0.174,0
+"Whole Lotta Love","Smash Mouth",0,0.650691,1,0.63884,1,0.548387,1,0.650589,1,0.634,1
+"Without Love (There Is Nothing)","Elvis Presley",0,0.026405,0,0.07333,0,0.032258,0,0.200335,0,0.076,0
+"Y'All Gone Miss Me","Snoop Dogg",0,0.686848,1,0.674972,1,0.548387,1,0.650589,1,0.634,1
+"Yo No Soy Esa Mujer","Paulina Rubio",0,0.466506,0,0.465598,0,0.548387,1,0.650589,1,0.6,1
+"You Don't Have To Say You Love Me re-recording","Glen Campbell",0,0.368959,0,0.408875,0,0.612903,1,0.200335,0,0.316,0
+"You Made Me Love You","R. Kelly",0,0.728938,1,0.699282,1,0.677419,1,0.650589,1,0.624,1
+"You Stupid Girl","Framing Hanley",0,0.650911,1,0.633723,1,0.516129,1,0.650589,1,0.476,0
+"Young Love","Jesse McCartney",0,0.623757,1,0.623044,1,0.806452,1,0.650589,1,0.612,1

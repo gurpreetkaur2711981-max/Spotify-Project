@@ -1,0 +1,4 @@
+"tier","source_dataset","total_rows","charted_count","noncharted_count","class_ratio_0_to_1"
+"Tier 1: Baseline Conservative","D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_clean.csv",128745,3618,125127,34.5846
+"Tier 2: Full Enriched","D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_enriched_clean.csv",128745,4079,124666,30.5629
+"Tier 3: High-Confidence Enriched (Passes 1-3 only)","D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_high_confidence_clean.csv",128745,4073,124672,30.6094

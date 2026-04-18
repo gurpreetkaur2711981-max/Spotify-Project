@@ -1,0 +1,54 @@
+BENCHMARK MODEL NOTES
+Generated: 2026-04-18 14:32:35
+
+FILES USED
+  Source enriched dataset : data/processed/spotify_billboard_merged_enriched_full.csv
+  Old baseline summary    : outputs/tables/logistic_model_summary.txt
+  Clean enriched output   : data/processed/spotify_billboard_analysis_enriched_clean.csv
+  Balanced train output   : data/processed/enriched_model_train_balanced.csv
+  Full test output        : data/processed/enriched_model_test_full.csv
+
+PACKAGE AVAILABILITY
+  MASS         : TRUE
+  class        : TRUE
+  rpart        : TRUE
+  randomForest : TRUE
+  ranger       : FALSE
+  xgboost      : FALSE
+
+DATASET AND SPLIT
+  Seed                 : 42
+  Clean enriched rows  : 128745
+  Full train rows      : 90122
+  Balanced train rows  : 5722
+  Test rows            : 38623
+  Train full charted=1 : 2861
+  Train full charted=0 : 87261
+  Train bal charted=1  : 2861
+  Train bal charted=0  : 2861
+  Test charted=1       : 1218
+  Test charted=0       : 37405
+
+MODELS RUN
+  Logistic Regression (Enriched), LDA, Random Forest, kNN, Decision Tree
+
+MODEL-SPECIFIC NOTES
+  - Logistic Regression (Enriched): glm binomial on balanced training set.
+  - LDA: MASS::lda on balanced training set.
+  - kNN: standardized on training-set statistics only; k grid=5,11,21,31; chosen k=31 by validation AUC=0.7001.
+  - Decision Tree: rpart classification tree with cp=0.01, minsplit=20, maxdepth=10.
+  - Random Forest: randomForest package with ntree=500 and sqrt(p) mtry.
+
+SKIPPED MODELS
+  - XGBoost skipped: xgboost not available.
+
+HEADLINE COMPARISON
+  Old logistic baseline AUC        : 0.7281
+  New enriched logistic AUC        : 0.7242
+  Best ROC-AUC model               : Logistic Regression (Enriched) (0.7242)
+  Best PR-AUC model                : Random Forest (0.0651)
+
+CALIBRATION CAUTION
+  Brier scores are reported, but no recalibration step was applied.
+  Because training was balanced and the test set kept the real class imbalance,
+  raw 0.50-threshold probabilities should not be treated as perfectly calibrated.

@@ -1,0 +1,10 @@
+"feature","direction__tier_1_baseline_conservative","mean_diff__tier_1_baseline_conservative","cohens_d__tier_1_baseline_conservative","effect_rank__tier_1_baseline_conservative","direction__tier_2_full_enriched","mean_diff__tier_2_full_enriched","cohens_d__tier_2_full_enriched","effect_rank__tier_2_full_enriched","direction__tier_3_high_confidence_enriched_passes_1_3_only_","mean_diff__tier_3_high_confidence_enriched_passes_1_3_only_","cohens_d__tier_3_high_confidence_enriched_passes_1_3_only_","effect_rank__tier_3_high_confidence_enriched_passes_1_3_only_","direction_stable_all_tiers"
+"danceability","positive",0.0336448763081584,0.215707527028692,7,"positive",0.0378433582131357,0.240765293042271,6,"positive",0.0379760058131303,0.241680976074286,6,TRUE
+"energy","positive",0.0646980792731898,0.317834437255922,5,"positive",0.0653499755967145,0.321996503772271,4,"positive",0.0652906391853598,0.321672245996926,4,TRUE
+"valence","positive",0.0233327506087646,0.100951463909737,9,"positive",0.022083240008241,0.0954242429735928,9,"positive",0.0220159197477072,0.0951379537693458,9,TRUE
+"tempo","positive",3.73395882672757,0.122319921155166,8,"positive",3.18623413707296,0.104648720911845,8,"positive",3.18350474979121,0.104561742806785,8,TRUE
+"loudness","positive",2.19717876702941,0.659922458029851,1,"positive",2.2043742305889,0.662404569107331,1,"positive",2.20521884479527,0.662623839210925,1,TRUE
+"acousticness","negative",-0.102161270341517,-0.400833510550996,2,"negative",-0.103880479783724,-0.408828295415192,2,"negative",-0.103859772208198,-0.408728691513941,2,TRUE
+"speechiness","negative",-0.0322505856418038,-0.247269058121916,6,"negative",-0.0262421627338432,-0.199246040031778,7,"negative",-0.026223282802692,-0.199075560741591,7,TRUE
+"instrumentalness","negative",-0.0550120864410247,-0.372814409909983,3,"negative",-0.0550612579081074,-0.372179619567369,3,"negative",-0.0550462973014992,-0.372061329609348,3,TRUE
+"liveness","negative",-0.0661193727825266,-0.342717185269003,4,"negative",-0.0575737582368213,-0.288856842220068,5,"negative",-0.0576454716670183,-0.289259615293427,5,TRUE

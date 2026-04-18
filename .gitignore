@@ -1,0 +1,42 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# R / local IDE state
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Python / JS caches
+__pycache__/
+*.pyc
+node_modules/
+site/node_modules/
+
+# Internal Codex state and planning traces
+docs/codex_*.md
+docs/superpowers/
+
+# Internal audit / bootstrap files not needed publicly
+outputs/tables/phase2_audit_report.txt
+outputs/tables/phase2_interpretation_patch_log.txt
+outputs/tables/phase3_output_audit.txt
+outputs/tables/project_file_manifest.txt
+
+# Heavy intermediary tables not needed for the public portfolio repo
+outputs/tables/benchmark_roc_curves.csv
+outputs/tables/benchmark_pr_curves.csv
+outputs/tables/logistic_test_predictions.csv
+outputs/tables/logistic_roc_points.csv
+outputs/tables/pca_scores_pc1_pc2.csv
+outputs/tables/manual_review_candidates.csv
+
+# Large local datasets kept outside version control
+data/raw/**
+data/processed/**
+!data/README.md

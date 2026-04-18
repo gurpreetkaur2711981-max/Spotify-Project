@@ -1,0 +1,31 @@
+ENRICHED CLEANING SUMMARY
+Generated: 2026-04-18 14:32:26
+
+SOURCE FILE
+  Path    : data/processed/spotify_billboard_merged_enriched_full.csv
+  Rows    : 128745
+  Cols    : 18
+
+OUTPUT FILE
+  Path    : data/processed/spotify_billboard_analysis_enriched_clean.csv
+  Rows    : 128745
+  Cols    : 18
+
+CLEANING ACTIONS
+  explicit unique values before: False, True
+  explicit converted to integer 0/1: yes
+  charted integer 0/1 confirmed   : TRUE
+  mode integer 0/1 confirmed      : TRUE
+
+CHECKS
+  Missing values total : 0
+  Duplicate rows       : 0
+  Flagged range values : 0
+
+CLASS BALANCE (UNCHANGED)
+  charted=1 : 4079
+  charted=0 : 124666
+  ratio 0:1 : 30.6:1
+
+NOTE
+  No rows were removed and no class balancing was applied in this cleaning step.

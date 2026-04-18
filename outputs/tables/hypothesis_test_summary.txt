@@ -1,0 +1,47 @@
+HYPOTHESIS TEST SUMMARY
+Generated : 2026-04-18 00:42:10
+Dataset   : data/processed/spotify_billboard_analysis_clean.csv
+
+TEST DESIGN
+  Method     : Welch two-sample t-test (var.equal = FALSE)
+  Groups     : charted=1 vs charted=0
+  n (charted)    : 3618
+  n (noncharted) : 125127
+  Features tested: 9
+  Raw alpha      : 0.05
+  Bonferroni alpha: 0.005556  (= 0.05 / 9)
+
+RESULTS (sorted by feature order)
+----------------------------------------------------------------------------------------------------
+  Feature                  Mean(1)     Mean(0)        Diff           t        df           p_raw    p_Bonferroni    Sig*   Cohen_d
+----------------------------------------------------------------------------------------------------
+  danceability             0.61212     0.57847    +0.03365     13.8860    3911.8       7.871e-43       0.000e+00     YES    0.2157
+  energy                   0.70400     0.63930    +0.06470     22.2027    4012.0      4.146e-103       0.000e+00     YES    0.3178
+  valence                  0.52157     0.49824    +0.02333      6.2116    3864.3       5.802e-10       0.000e+00     YES    0.1010
+  tempo                  122.89686   119.16290    +3.73396      7.3674    3843.6       2.118e-13       0.000e+00     YES    0.1223
+  loudness                -5.84565    -8.04283    +2.19718     56.9203    4392.3       0.000e+00       0.000e+00     YES    0.6599
+  acousticness             0.15992     0.26208    -0.10216    -29.4687    4086.0      3.083e-173       0.000e+00     YES   -0.4008
+  speechiness              0.09418     0.12643    -0.03225    -18.8259    4142.4       6.305e-76       0.000e+00     YES   -0.2473
+  instrumentalness         0.00795     0.06296    -0.05501    -46.7250    6065.6       0.000e+00       0.000e+00     YES   -0.3728
+  liveness                 0.18703     0.25315    -0.06612    -26.1996    4149.3      3.803e-140       0.000e+00     YES   -0.3427
+----------------------------------------------------------------------------------------------------
+  * Sig column: YES = significant after Bonferroni; raw = significant at alpha=0.05 only; no = not significant
+
+FEATURES SIGNIFICANT AFTER BONFERRONI CORRECTION
+  danceability, energy, valence, tempo, loudness, acousticness, speechiness, instrumentalness, liveness
+
+TOP 3 LARGEST ABSOLUTE EFFECT SIZES (Cohen's d)
+  1. loudness              d = +0.6599
+  2. acousticness          d = -0.4008
+  3. instrumentalness      d = -0.3728
+
+INTERPRETATION NOTE
+  With n=128,745 rows, very small differences can produce significant p-values.
+  Cohen's d interprets effect magnitude: |d|<0.2 small, 0.2-0.5 medium, >0.5 large.
+  Significant p-values here reflect statistical reliability of the difference,
+  not necessarily a large or practically meaningful effect.
+
+WHAT WAS NOT DONE
+  - No PCA
+  - No logistic regression
+  - No class balancing or sampling

@@ -1,0 +1,99 @@
+===================================================================
+  ERA DRIFT ANALYSIS SUMMARY
+  Generated: 2026-04-18 13:59:15
+  Script   : scripts/07_era_drift_analysis.R
+===================================================================
+
+--- FILES USED ---
+  Billboard     : data/raw/BillboardFromLast20/billboardHot100_1999-2019.csv
+  songAttributes: data/raw/BillboardFromLast20/songAttributes_1999-2019.csv
+  Enriched merged: data/processed/spotify_billboard_merged_enriched_full.csv
+
+--- MODEL CHOICE ---
+  Attempted : charted-vs-noncharted era-specific logistic regression
+  Result    : NOT POSSIBLE
+  Reason    : Non-charted songs in songAttributes have no year information.
+              Fabricating years for non-charted songs is not valid.
+  Used      : Within-chart top10_hit logistic regression per era
+  Outcome   : top10_hit = 1 if Peak.position <= 10, else 0
+  Predictors: 9 audio features (globally standardized)
+
+--- ERA DEFINITIONS ---
+  Era 1999-2002: years 1999-2002
+  Era 2003-2006: years 2003-2006
+  Era 2007-2010: years 2007-2010
+  Era 2011-2014: years 2011-2014
+  Era 2015-2019: years 2015-2019
+
+--- COUNTS PER ERA ---
+       era bill_songs_total bill_with_peak bill_top10 charted_matched model_n
+ 1999-2002             1035           1030        214             712     709
+ 2003-2006             1216           1159        219             903     867
+ 2007-2010             1519           1201        231            1022     861
+ 2011-2014             1441           1100        193             783     643
+ 2015-2019             2002           1461        227             659     494
+ model_top10 pct_bill_matched
+         147             68.8
+         165             74.3
+         168             67.3
+         123             54.3
+          85             32.9
+
+--- GLOBAL STANDARDIZATION ---
+          feature global_mean global_sd
+     danceability      0.6161    0.1456
+           energy      0.7044    0.1691
+          valence      0.5203    0.2228
+            tempo    122.3531   29.8536
+         loudness     -5.8465    2.2000
+     acousticness      0.1586    0.1999
+      speechiness      0.1001    0.1027
+ instrumentalness      0.0081    0.0631
+         liveness      0.1955    0.1630
+
+--- TOP 3 FEATURES WITH MOST MEAN DRIFT ACROSS ERAS ---
+  1. speechiness (drift score: 0.609)
+  2. energy (drift score: 0.549)
+  3. loudness (drift score: 0.510)
+
+--- TOP 3 PREDICTORS WITH MOST COEFFICIENT DRIFT ---
+  1. danceability (coef range: -0.021 to 0.615, span=0.636, crossed zero)
+  2. valence (coef range: -0.231 to 0.382, span=0.613, crossed zero)
+  3. energy (coef range: -0.598 to 0.012, span=0.610, crossed zero)
+
+--- FEATURE MEAN CHANGE (first era -> last era) ---
+  danceability         higher in 2015-2019 than 1999-2002 (Delta=+0.032)
+  energy               lower in 2015-2019 than 1999-2002 (Delta=-0.050)
+  valence              lower in 2015-2019 than 1999-2002 (Delta=-0.095)
+  tempo                higher in 2015-2019 than 1999-2002 (Delta=+4.364 BPM)
+  loudness             lower in 2015-2019 than 1999-2002 (Delta=-0.152)
+  acousticness         higher in 2015-2019 than 1999-2002 (Delta=+0.019)
+  speechiness          higher in 2015-2019 than 1999-2002 (Delta=+0.063)
+  instrumentalness     relatively stable (Delta=-0.009)
+  liveness             relatively stable (Delta=-0.004)
+
+--- FORMULA FOR SUCCESS ---
+  Verdict: MODERATE EVIDENCE OF DRIFT - results are consistent with a shifting formula for success, but interpretation should be cautious
+  Mean coefficient range across features: 0.455
+  Features that crossed zero: 7 out of 9
+  Caution: later-era coverage is weaker, and 2015-2019 has only 85 modeled top-10 songs.
+           Interpret later-era drift cautiously.
+
+--- ASSUMPTIONS AND LIMITATIONS ---
+  - Year assigned = earliest year song appeared on Billboard Hot 100
+  - Songs in multiple eras assigned to the era of first chart appearance
+  - Matching rate ~57%: not all Billboard songs have Spotify audio features
+  - Songs with NA Peak.position excluded from model (rates vary by era: 0%-27%)
+  - Model is within-chart only: does NOT compare charted vs non-charted
+  - Coefficients reflect top10 vs non-top10 among charted songs, not chart entry
+  - Standardization is global (all eras pooled) for cross-era comparability
+
+--- OUTPUT FILES ---
+  Table: outputs/tables/era_feature_means.csv
+  Table: outputs/tables/era_counts.csv
+  Table: outputs/tables/era_model_coefficients.csv
+  Figure: outputs/figures/era_drift/era_feature_trends.png
+  Figure: outputs/figures/era_drift/era_coefficient_drift.png
+  Figure: outputs/figures/era_drift/era_counts.png
+  Figure: outputs/figures/era_drift/era_pvalue_heatmap.png
+  Markdown: docs/step7_era_drift_summary.md

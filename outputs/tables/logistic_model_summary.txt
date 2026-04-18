@@ -1,0 +1,59 @@
+LOGISTIC REGRESSION MODEL SUMMARY
+Generated  : 2026-04-18 12:40:50
+Random seed: 42
+
+DATASET
+  Source : data/processed/spotify_billboard_analysis_clean.csv
+  Total  : 128745 rows
+
+TRAIN/TEST SPLIT
+  Full train (70%)          : 90122 rows
+  Balanced train (used fit) : 5068 rows
+  Test set untouched (30%)  : 38623 rows
+
+CLASS BALANCE
+  Balanced train — charted=1: 2534  charted=0: 2534
+  Test (full)    — charted=1: 1084  charted=0: 37539
+
+MODEL
+  Formula   : charted ~ danceability + energy + valence + tempo + loudness + 
+  Formula   :     acousticness + speechiness + instrumentalness + liveness
+  Family    : binomial (logit link)
+  Converged : TRUE
+
+COEFFICIENTS
+  (Intercept)             est=+2.918037  OR=18.504923  p=2.0500e-15
+  danceability            est=+1.193568  OR=3.298832  p=2.0515e-06
+  energy                  est=-1.532425  OR=0.216011  p=3.4430e-07
+  valence                 est=-0.560323  OR=0.571025  p=9.7810e-04
+  tempo                   est=+0.003355  OR=1.003361  p=1.4793e-03
+  loudness                est=+0.284107  OR=1.328575  p=2.7503e-54
+  acousticness            est=-0.967987  OR=0.379847  p=2.0317e-08
+  speechiness             est=-1.856510  OR=0.156217  p=1.4731e-10
+  instrumentalness        est=-3.316860  OR=0.036267  p=2.4162e-17
+  liveness                est=-1.574536  OR=0.207104  p=1.2374e-17
+  Significant predictors (p<0.05): danceability, energy, valence, tempo, loudness, acousticness, speechiness, instrumentalness, liveness
+
+TEST SET PERFORMANCE (threshold=0.50, n=
+38623
+)
+  Confusion matrix: TP=827  FP=15731  FN=257  TN=21808
+  Accuracy    : 0.586
+  Precision   : 0.0499
+  Recall      : 0.7629
+  Specificity : 0.5809
+  F1 Score    : 0.0938
+  AUC         : 0.7281
+
+AUC VERDICT
+  WITHIN the proposal's expected 0.70-0.80 range
+
+NOTES
+  - Probabilities are from a model trained on balanced (50/50) data.
+  - At threshold=0.50 on the imbalanced test set, recall > precision is expected.
+  - AUC is threshold-independent and is the primary evaluation metric.
+  - Probability estimates are NOT recalibrated for the real-world 2.8% base rate.
+
+WHAT WAS NOT DONE
+  - Original cleaned dataset was not modified
+  - Test set was not balanced or resampled

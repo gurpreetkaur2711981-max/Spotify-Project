@@ -1,0 +1,93 @@
+=============================================================
+  MERGE SUMMARY REPORT
+  Generated  : 2026-04-18 00:15:17
+  Script     : scripts/01b_build_merged_dataset.R
+=============================================================
+
+--- Source Files ---
+  Billboard     : data/raw/BillboardFromLast20/billboardHot100_1999-2019.csv
+  songAttributes: data/raw/BillboardFromLast20/songAttributes_1999-2019.csv
+
+--- Raw Row Counts ---
+  Billboard raw rows      : 97225
+  songAttributes raw rows : 154931
+
+--- After Deduplication ---
+  Billboard unique songs      : 7213
+  Billboard rows removed      : 90012
+  songAttributes unique songs : 128745
+  songAttributes rows removed : 26186
+  songAttributes dedup rule: keep row with fewest NA, break ties by highest Popularity
+
+--- Matching Rules ---
+  Primary rule: cleaned_song_name + cleaned_primary_artist
+    - Cleaning: lowercase, remove punctuation, collapse spaces, trim whitespace
+    - Primary artist: text before first comma in Billboard Artists field
+  Fallback rule: REJECTED
+    Reason: title-only matching produces clear false positives
+    Evidence examples:
+      'truth hurts' (Lizzo) -> wrongly matched to Elephant Man
+      'bad guy' (Billie Eilish) -> wrongly matched to Pastor Troy / Eminem
+      'senorita' (Shawn Mendes) -> wrongly matched to Gorilla Zoe
+
+--- Match Counts ---
+  Primary matches (name+artist)            : 3618
+  Fallback matches (title only)               : 0  (rejected)
+  Total charted in merged dataset          : 3618
+  Billboard songs not matched (no audio)   : 3595
+
+--- Final Merged Dataset ---
+  Output file   : data/processed/spotify_billboard_merged_full.csv
+  Total rows    : 128745
+  Total columns : 18
+  Columns       : charted, song_name, artist, danceability, energy, valence, tempo, loudness, acousticness, speechiness, instrumentalness, liveness, album, duration_ms, explicit, mode, popularity, time_signature
+  charted = 1   : 3618
+  charted = 0   : 125127
+  Imbalance (0:1 ratio): 34.6 :1
+
+--- Missing Values Summary ---
+           column missing
+          charted       0
+        song_name       0
+           artist       0
+     danceability       0
+           energy       0
+          valence       0
+            tempo       0
+         loudness       0
+     acousticness       0
+      speechiness       0
+ instrumentalness       0
+         liveness       0
+            album       0
+      duration_ms       0
+         explicit       0
+             mode       0
+       popularity       0
+   time_signature       0
+
+--- Proposal Variable Check ---
+  charted            : PRESENT
+  danceability      : PRESENT
+  energy            : PRESENT
+  valence           : PRESENT
+  tempo             : PRESENT
+  loudness          : PRESENT
+  acousticness      : PRESENT
+  speechiness       : PRESENT
+  instrumentalness  : PRESENT
+  liveness          : PRESENT
+
+  Proposal variables found   : 10 / 10
+  Proposal variables missing : 0
+
+--- Does This Match the Proposal? ---
+  All 9 audio features    : PRESENT
+  charted outcome column  : PRESENT (binary 0/1)
+  Proposal match status   : PARTIAL
+  Reasons for PARTIAL:
+    - Severe class imbalance: 34.6 :1 (will need balancing in modeling step)
+    - 3595 Billboard songs could not be matched to audio features
+    - These unmatched songs were real chart hits but absent from songAttributes
+  No modeling or sampling was done in this script.
+

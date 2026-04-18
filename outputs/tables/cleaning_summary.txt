@@ -1,0 +1,29 @@
+CLEANING SUMMARY
+Generated: 2026-04-18 00:38:21
+
+SOURCE FILE
+  Path    : data/processed/spotify_billboard_merged_full.csv
+  Rows    : 128745
+  Cols    : 18
+
+OUTPUT FILE
+  Path    : data/processed/spotify_billboard_analysis_clean.csv
+  Rows    : 128745
+  Cols    : 18
+
+CHANGES MADE
+  1. explicit column: character ('True'/'False') -> integer (1/0)
+     explicit=1 : 29131
+     explicit=0 : 99614
+
+CHECKS PERFORMED
+  Missing values        : 0
+  Duplicate rows        : 0
+  Binary columns OK     : TRUE
+  Audio feature types OK: TRUE
+  Feature ranges OK     : TRUE
+  Flagged rows          : 0
+
+CLASS BALANCE (unchanged)
+  charted=1 : 3618 (2.81%)
+  charted=0 : 125127 (97.19%)

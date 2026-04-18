@@ -1,0 +1,73 @@
+ROBUSTNESS / SENSITIVITY ANALYSIS SUMMARY
+Generated: 2026-04-18 15:26:20
+
+STATE CHECK
+  Baseline clean dataset        : D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_clean.csv
+  Enriched clean dataset        : D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_enriched_clean.csv
+  High-confidence clean dataset : D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_high_confidence_clean.csv
+
+HIGH-CONFIDENCE TIER DEFINITION
+  Built from the enriched clean dataset by removing only the 6 saved Pass 4 fuzzy-title auto-accepted matches.
+  Pass 4 rows identified in saved outputs: 6
+  This keeps passes 1-3 and removes only the least-strict fuzzy step.
+
+DATASET STRUCTURE
+                                               tier
+                      Tier 1: Baseline Conservative
+                              Tier 2: Full Enriched
+ Tier 3: High-Confidence Enriched (Passes 1-3 only)
+                                                                                 source_dataset
+                 D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_clean.csv
+        D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_enriched_clean.csv
+ D:/SpotifyBillboardProject/data/processed/spotify_billboard_analysis_high_confidence_clean.csv
+ total_rows charted_count noncharted_count class_ratio_0_to_1
+     128745          3618           125127            34.5846
+     128745          4079           124666            30.5629
+     128745          4073           124672            30.6094
+
+HYPOTHESIS DIRECTIONAL STABILITY
+  Features with same mean-difference direction across all tiers: 9 / 9
+  Top |effect size| features by tier:
+    Tier 1: Baseline Conservative -> loudness, acousticness, instrumentalness
+    Tier 2: Full Enriched -> loudness, acousticness, instrumentalness
+    Tier 3: High-Confidence Enriched (Passes 1-3 only) -> loudness, acousticness, instrumentalness
+
+PCA STABILITY
+  PCs needed for 80% variance by tier: Tier 1: Baseline Conservative=5; Tier 2: Full Enriched=5; Tier 3: High-Confidence Enriched (Passes 1-3 only)=5
+  PC1 energy/loudness vs acousticness axis holds for all tiers: TRUE
+  PC2 danceability/valence/speechiness style holds for all tiers: TRUE
+  PCA is exactly identical across tiers here because all three tiers keep the same song rows and audio-feature matrix.
+  Only the charted labels change, and charted is not included in PCA.
+
+LOGISTIC STABILITY
+  ROC-AUC by tier: Tier 1: Baseline Conservative=0.7281; Tier 2: Full Enriched=0.7242; Tier 3: High-Confidence Enriched (Passes 1-3 only)=0.7243
+  PR-AUC by tier: Tier 1: Baseline Conservative=0.0577; Tier 2: Full Enriched=0.0641; Tier 3: High-Confidence Enriched (Passes 1-3 only)=0.0640
+  ROC-AUC range across tiers: 0.7242 to 0.7281
+  PR-AUC range across tiers: 0.0577 to 0.0641
+
+COEFFICIENT SIGN STABILITY
+  Predictors with the same coefficient sign across all tiers: 9 / 9
+  Top predictors by smallest p-value:
+    Tier 1: Baseline Conservative -> loudness, liveness, instrumentalness
+    Tier 2: Full Enriched -> loudness, instrumentalness, liveness
+    Tier 3: High-Confidence Enriched (Passes 1-3 only) -> loudness, instrumentalness, energy
+
+MAIN INTERPRETATION
+  The main conclusions were directionally robust across conservative, enriched, and high-confidence dataset tiers.
+
+IMPORTANT LIMITATION
+  The high-confidence tier is only slightly narrower than the full enriched tier because the saved fuzzy Pass 4 step added just 6 rows.
+  This still provides a real sensitivity check, but it is not a dramatic reconstruction change.
+
+FILES WRITTEN
+  D:/SpotifyBillboardProject/outputs/tables/robustness_dataset_tier_comparison.csv
+  D:/SpotifyBillboardProject/outputs/tables/robustness_hypothesis_direction_comparison.csv
+  D:/SpotifyBillboardProject/outputs/tables/robustness_pca_comparison.csv
+  D:/SpotifyBillboardProject/outputs/tables/robustness_logistic_comparison.csv
+  D:/SpotifyBillboardProject/outputs/tables/robustness_coefficient_signs.csv
+  D:/SpotifyBillboardProject/outputs/tables/robustness_summary.txt
+  D:/SpotifyBillboardProject/outputs/figures/robustness/robustness_auc_comparison.png
+  D:/SpotifyBillboardProject/outputs/figures/robustness/robustness_prauc_comparison.png
+  D:/SpotifyBillboardProject/outputs/figures/robustness/robustness_coefficient_signs.png
+  D:/SpotifyBillboardProject/outputs/figures/robustness/robustness_effect_size_comparison.png
+  D:/SpotifyBillboardProject/docs/step10_robustness_summary.md
