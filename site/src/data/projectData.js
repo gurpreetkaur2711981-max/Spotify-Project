@@ -1,126 +1,145 @@
 export const siteMeta = {
   title: "Signals of Success",
-  kicker: "Spotify audio features × Billboard chart outcomes",
-  hook: "A premium analytics story about what makes a chart profile, what changed across eras, and why simpler models still won.",
+  kicker: "Can you hear whether a song is likely to become a hit?",
+  hook:
+    "This project asks a simple question: if we only know how a song sounds on Spotify, can we tell whether it has the kind of profile that reaches the Billboard Hot 100?",
   subcopy:
-    "This project turned a messy multi-table Kaggle download into an end-to-end music analytics product: merge logic, safer enrichment, predictive modeling, era drift analysis, benchmarking, and robustness testing.",
+    "To answer that, I connected Spotify audio features with Billboard hit history, built the dataset myself, compared hit songs with non-hit songs, tested broader sound patterns, built prediction models, and checked whether the conclusions still held up over time and across stricter versions of the data.",
 };
 
 export const navItems = [
   { label: "Overview", href: "#overview" },
-  { label: "Pipeline", href: "#pipeline" },
+  { label: "Data Story", href: "#pipeline" },
   { label: "Findings", href: "#findings" },
   { label: "Models", href: "#dashboard" },
-  { label: "Era Drift", href: "#era-drift" },
-  { label: "Robustness", href: "#robustness" },
+  { label: "Era Story", href: "#era-drift" },
+  { label: "Trust Check", href: "#robustness" },
   { label: "Explorer", href: "#explorer" },
-  { label: "Methodology", href: "#methodology" },
+  { label: "Why It Matters", href: "#methodology" },
 ];
 
 export const heroMetrics = [
   {
-    label: "Validated Logistic AUC",
+    label: "Baseline hit-ranking score",
     value: "0.7281",
-    detail: "Baseline model on untouched imbalanced test data",
+    detail: "How well the main model separated chart songs from non-chart songs",
   },
   {
-    label: "Songs Analyzed",
+    label: "Songs in the final study",
     value: "128,745",
-    detail: "Merged from Spotify attributes and Billboard history",
+    detail: "Spotify and Billboard records joined into one analysis dataset",
   },
   {
-    label: "Charted Songs After Enrichment",
+    label: "Confirmed chart songs after safer matching",
     value: "4,079",
-    detail: "Recovered from safer multi-pass matching",
+    detail: "+461 more true chart songs recovered without risky shortcuts",
   },
   {
-    label: "Variance Explained By 5 PCs",
+    label: "Sound patterns captured in 5 broad components",
     value: "80.5%",
-    detail: "Audio space compresses cleanly without losing the main story",
+    detail: "Most of the audio story could be summarized without losing the main signal",
   },
 ];
 
 export const storyCards = [
   {
-    eyebrow: "Research Question",
-    title: "Can audio DNA predict chart outcomes?",
+    eyebrow: "What was the problem?",
+    title: "Can a song's sound hint at chart success?",
     text:
-      "The project asks whether Spotify's audio features carry enough signal to distinguish songs that appeared on the Billboard Hot 100 from songs that did not.",
+      "I wanted to test whether the way a song sounds - louder, more acoustic, more danceable, more instrumental, and so on - says anything useful about whether it reaches the Billboard Hot 100.",
   },
   {
-    eyebrow: "Why It Matters",
-    title: "This became a product problem, not just a homework exercise.",
+    eyebrow: "Why should anyone care?",
+    title: "Because music decisions are emotional and commercial at the same time.",
     text:
-      "The raw Kaggle download was not a ready-made analysis table. The hard part became data integration, match safety, enrichment, benchmarking, and proving the results were not artifacts of one fragile construction choice.",
+      "Artists, labels, marketers, and streaming platforms all care about what resonates. Data cannot write a hit song, but it can reveal patterns that help creative and business decisions.",
   },
   {
-    eyebrow: "Real-World Strength",
-    title: "The messy join is part of the story.",
+    eyebrow: "What data did I use?",
+    title: "Spotify described the sound. Billboard recorded the outcome.",
     text:
-      "Instead of hiding the merge challenge, the site treats it as a strength: conservative matching, enrichment, high-confidence sensitivity checks, and honest discussion of what the project can and cannot claim.",
+      "Spotify gave the audio fingerprints of songs. Billboard showed which songs actually became hits. Putting those two worlds together was the foundation of the whole project.",
+  },
+  {
+    eyebrow: "What made it hard?",
+    title: "Those two worlds did not come neatly joined together.",
+    text:
+      "Before any model could be trusted, I had to clean names, match artists carefully, avoid bad links, and improve coverage without weakening the rules.",
+  },
+  {
+    eyebrow: "What did I actually do?",
+    title: "I built the dataset, tested patterns, and trained prediction models.",
+    text:
+      "I compared hit songs with non-hit songs, looked for broader sound patterns, built models to predict charting, tested stronger alternatives, and checked whether the story stayed stable across different versions of the data.",
+  },
+  {
+    eyebrow: "Why is the project strong?",
+    title: "The conclusions were challenged from several angles.",
+    text:
+      "This was not one lucky chart or one easy file. The project includes safer enrichment, benchmarking, era analysis, and robustness checks so the conclusions are supported from several directions.",
   },
 ];
 
 export const pipelineSteps = [
   {
-    phase: "Raw Inputs",
-    title: "Source Tables",
+    phase: "Question",
+    title: "Define the target",
     text:
-      "Two separate tables arrived from Kaggle: Billboard chart history and Spotify song attributes. Nothing was pre-joined.",
+      "The central prediction question was simple: can audio features help separate songs that charted from songs that did not?",
   },
   {
-    phase: "Data Engineering",
-    title: "Conservative Merge",
+    phase: "Data",
+    title: "Bring the sources together",
     text:
-      "The first merged dataset used cleaned title plus primary artist exact matching to avoid false positives.",
+      "Spotify supplied song features. Billboard supplied real hit outcomes. I had to connect those records song by song.",
   },
   {
-    phase: "Quality Pass",
-    title: "Light Cleaning",
+    phase: "Cleaning",
+    title: "Make the records trustworthy",
     text:
-      "Columns were typed safely, binary fields were normalized, and ranges were checked without deleting rows unnecessarily.",
+      "Names, types, and binary fields were cleaned so the comparisons would not be distorted by formatting problems.",
   },
   {
-    phase: "Insight Layer",
-    title: "EDA + Hypothesis Tests",
+    phase: "Comparison",
+    title: "Compare hit songs with non-hit songs",
     text:
-      "Distribution shifts, effect sizes, and feature directionality were validated before any model was treated seriously.",
+      "Before any machine learning, I checked whether chart songs and non-chart songs already looked different in meaningful ways.",
   },
   {
-    phase: "Structure",
-    title: "PCA",
+    phase: "Pattern Finding",
+    title: "Reduce many features into broader sound patterns",
     text:
-      "Principal components tested whether the feature space had a compact underlying geometry aligned with chart success.",
+      "This helped answer whether several audio traits were really pointing to the same bigger story about how hit songs tend to sound.",
   },
   {
     phase: "Prediction",
-    title: "Logistic Baseline",
+    title: "Build a hit vs non-hit model",
     text:
-      "A class-balanced training subset and untouched test set produced the core interpretable model.",
+      "I trained a simple model to see whether sound alone could meaningfully rank likely chart songs above non-chart songs.",
   },
   {
-    phase: "Matching Upgrade",
-    title: "Safer Enrichment",
+    phase: "Data Upgrade",
+    title: "Recover more confirmed hit songs safely",
     text:
-      "Normalization and tiny fuzzy recovery passes raised matched charted songs from 3,618 to 4,079 without resorting to risky cross-artist matching.",
+      "I improved matching carefully so the project used more true chart songs without relying on risky guesses or cross-artist matches.",
   },
   {
-    phase: "Temporal Layer",
-    title: "Era Drift",
+    phase: "Time Question",
+    title: "Check whether the sound of success changed over time",
     text:
-      "Because non-charted songs lacked trustworthy year labels, the project used a chart-only top-10-by-era fallback instead of inventing time information.",
+      "I tested whether the traits linked with success stayed stable from 1999 to 2019 or drifted as music trends changed.",
   },
   {
-    phase: "Model Defense",
-    title: "Benchmark Suite",
+    phase: "Model Challenge",
+    title: "See if more complex models really helped",
     text:
-      "The enriched dataset tested whether LDA, kNN, decision trees, and random forest could materially beat logistic regression.",
+      "I compared the simple model with several stronger alternatives to see whether extra complexity actually improved performance.",
   },
   {
-    phase: "Professor-Proof",
-    title: "Robustness Tiers",
+    phase: "Trust Check",
+    title: "Test whether the story survived dataset changes",
     text:
-      "Conservative, enriched, and high-confidence tiers were compared to show the main story survives changes in dataset construction.",
+      "I reran the main ideas across conservative, enriched, and high-confidence tiers so the conclusions would not depend on one convenient dataset.",
   },
 ];
 
@@ -145,35 +164,40 @@ export const figurePaths = {
 
 export const edaHighlights = [
   {
-    title: "Loudness is the clearest separation signal.",
+    title: "Hit songs tended to be louder.",
     text:
-      "Charted songs are about 2.2 dB louder on average, and loudness carries the largest practical effect size in the original hypothesis test results.",
+      "Across the dataset, charted songs were noticeably louder on average. Loudness turned out to be the clearest single difference between hits and non-hits.",
   },
   {
-    title: "Acousticness, instrumentalness, and liveness move the other way.",
+    title: "Hit songs were usually less acoustic and less instrumental.",
     text:
-      "The charted profile is less acoustic, less instrumental, and less live-seeming. Those directions survive in the statistical tests, the logistic model, and the robustness study.",
+      "Songs that charted tended to be less acoustic, less instrumental, and less live-seeming. That same direction kept showing up across several parts of the project.",
+  },
+  {
+    title: "Several smaller clues lined up in the same direction.",
+    text:
+      "Danceability, energy, and tempo also leaned toward chart success, which suggested there was enough signal to try a real prediction model.",
   },
 ];
 
 export const hypothesisFeatures = [
   { feature: "loudness", diff: 2.1972, effect: 0.6599, direction: "positive" },
   { feature: "acousticness", diff: -0.1022, effect: -0.4008, direction: "negative" },
-  { feature: "instrumentalness", diff: -0.0550, effect: -0.3728, direction: "negative" },
+  { feature: "instrumentalness", diff: -0.055, effect: -0.3728, direction: "negative" },
   { feature: "liveness", diff: -0.0661, effect: -0.3427, direction: "negative" },
   { feature: "energy", diff: 0.0647, effect: 0.3178, direction: "positive" },
   { feature: "speechiness", diff: -0.0323, effect: -0.2473, direction: "negative" },
   { feature: "danceability", diff: 0.0336, effect: 0.2157, direction: "positive" },
-  { feature: "tempo", diff: 3.7340, effect: 0.1223, direction: "positive" },
-  { feature: "valence", diff: 0.0233, effect: 0.1010, direction: "positive" },
+  { feature: "tempo", diff: 3.734, effect: 0.1223, direction: "positive" },
+  { feature: "valence", diff: 0.0233, effect: 0.101, direction: "positive" },
 ];
 
 export const pcaSummary = {
   fivePcVariance: 0.805281,
   pc1Story:
-    "PC1 contrasts louder, more energetic music against more acoustic tracks. It is the dominant structural axis in the feature space.",
+    "When I compressed many audio features into a few bigger sound patterns, the strongest pattern separated loud, energetic songs from quieter, more acoustic ones.",
   pc2Story:
-    "PC2 is anchored by danceability, valence, and speechiness, adding a second dimension that feels closer to vibe, delivery, and movement.",
+    "A second pattern was tied more closely to danceability, valence, and speechiness, which feels closer to vibe, delivery, and movement.",
 };
 
 export const logisticModel = {
@@ -189,7 +213,7 @@ export const logisticModel = {
     tn: 21808,
   },
   note:
-    "The model was trained on a balanced subset but judged on the original imbalanced test set, which is why the score is useful for ranking while the raw 0.50 threshold is not perfectly calibrated.",
+    "Think of the AUC here as a ranking score. It tells us the model could meaningfully place real chart songs above non-chart songs, even though audio alone cannot explain everything.",
 };
 
 export const benchmarkModels = [
@@ -200,7 +224,7 @@ export const benchmarkModels = [
     accuracy: 0.5825,
     precision: 0.0558,
     recall: 0.7685,
-    note: "Best overall balance of interpretability and ROC-AUC.",
+    note: "Best overall mix of performance, clarity, and explainability.",
   },
   {
     model: "LDA",
@@ -209,7 +233,7 @@ export const benchmarkModels = [
     accuracy: 0.5483,
     precision: 0.0539,
     recall: 0.8054,
-    note: "Close, but not better enough to change the story.",
+    note: "Very close to logistic, but not clearly better.",
   },
   {
     model: "Random Forest",
@@ -218,7 +242,7 @@ export const benchmarkModels = [
     accuracy: 0.6138,
     precision: 0.0566,
     recall: 0.7184,
-    note: "Best PR-AUC, but not a material ROC-AUC improvement.",
+    note: "Won one harder metric slightly, but not enough to replace the simpler baseline.",
   },
   {
     model: "kNN",
@@ -227,7 +251,7 @@ export const benchmarkModels = [
     accuracy: 0.5223,
     precision: 0.0503,
     recall: 0.7906,
-    note: "More complex deployment story without enough upside.",
+    note: "Added complexity without enough extra value.",
   },
   {
     model: "Decision Tree",
@@ -236,7 +260,7 @@ export const benchmarkModels = [
     accuracy: 0.5008,
     precision: 0.0489,
     recall: 0.8038,
-    note: "Simpler visually, weaker statistically.",
+    note: "Easy to picture, but weaker overall.",
   },
 ];
 
@@ -254,7 +278,7 @@ export const enrichmentSummary = {
 
 export const eraDrift = {
   conclusion:
-    "The project now frames the result as moderate evidence of drift rather than proof of a completely rewritten success formula.",
+    "The evidence suggests the sound linked with success changed somewhat over time, but not so dramatically that we can claim the formula was completely rewritten.",
   caution:
     "Later-era coverage is weaker, and the 2015-2019 era has relatively few modeled top-10 songs, so those coefficients need more caution.",
   counts: [
@@ -265,15 +289,15 @@ export const eraDrift = {
     { era: "2015-2019", matched: 659, top10: 85 },
   ],
   takeaways: [
-    "Chart-era modeling had to switch to a chart-only top-10 prediction problem because non-charted songs do not carry trustworthy years in the saved dataset.",
-    "Feature means and era-specific coefficients suggest some change over time, especially in how danceability, energy, and valence relate to within-chart success.",
-    "The interpretation is intentionally cautious, especially in the latest era.",
+    "The time question had to be handled carefully because non-charted songs did not have trustworthy years attached to them in the saved data.",
+    "Some traits linked with stronger chart performance moved over time, especially danceability, energy, and valence.",
+    "Overall, the result points to moderate drift rather than a brand-new rulebook for success.",
   ],
 };
 
 export const robustness = {
   conclusion:
-    "The main conclusions were directionally robust across conservative, enriched, and high-confidence dataset tiers.",
+    "The core story held up across conservative, enriched, and high-confidence versions of the dataset.",
   tiers: [
     {
       name: "Baseline Conservative",
@@ -298,27 +322,103 @@ export const robustness = {
     },
   ],
   note:
-    "The high-confidence tier is only slightly narrower than full enrichment because the saved fuzzy Pass 4 auto-recovery affected just 6 rows. That still makes it a real sensitivity check, just not a dramatic reconstruction.",
+    "That matters because it shows the findings were not just artifacts of one convenient data build. Even when the dataset changed a little, the main direction of the story stayed the same.",
 };
 
 export const methodology = {
-  tools: ["R", "base R", "Welch t-tests", "PCA", "logistic regression", "random undersampling", "matching enrichment", "robustness tiers"],
+  audiences: ["Artists", "Labels", "A&R Teams", "Marketers", "Streaming Platforms"],
+  audienceText:
+    "Each group can use a project like this differently: creators can reflect on sound profile, labels can compare positioning, marketers can sharpen campaign language, and platforms can better understand the kinds of tracks that tend to break through.",
+  meaning:
+    "The big takeaway is that chart success is not completely random. Some audio patterns show up around successful songs often enough to be measured, compared, and modeled.",
   honesty:
-    "This project makes association claims, not causal claims. It also documents selection bias from songs that never matched to Spotify attributes and the limitations of audio-only prediction.",
+    "Data can support music strategy, but it cannot replace creativity, timing, culture, or human judgment. These results are about association, not guaranteed causation.",
   limitation:
-    "The estimator and classifiers only see audio features. They do not know about release timing, artist fame, marketing, label support, playlisting, or cultural context.",
+    "This project only sees audio features. It does not know anything about artist fame, release strategy, fan base, playlist support, marketing budget, or cultural moments.",
 };
 
 export const featureControls = [
-  { key: "danceability", label: "Danceability", min: 0, max: 1, step: 0.01, defaultValue: 0.61, description: "How movement-friendly the track feels." },
-  { key: "energy", label: "Energy", min: 0, max: 1, step: 0.01, defaultValue: 0.7, description: "Perceived intensity and drive." },
-  { key: "valence", label: "Valence", min: 0, max: 1, step: 0.01, defaultValue: 0.52, description: "How positive or bright the mood feels." },
-  { key: "tempo", label: "Tempo", min: 60, max: 200, step: 1, defaultValue: 123, description: "Estimated beats per minute." },
-  { key: "loudness", label: "Loudness", min: -20, max: 0, step: 0.1, defaultValue: -5.8, description: "Overall loudness in decibels." },
-  { key: "acousticness", label: "Acousticness", min: 0, max: 1, step: 0.01, defaultValue: 0.16, description: "Confidence that the track is acoustic." },
-  { key: "speechiness", label: "Speechiness", min: 0, max: 1, step: 0.01, defaultValue: 0.09, description: "How speech-heavy the vocal delivery is." },
-  { key: "instrumentalness", label: "Instrumentalness", min: 0, max: 1, step: 0.01, defaultValue: 0.01, description: "Likelihood that the track lacks vocals." },
-  { key: "liveness", label: "Liveness", min: 0, max: 1, step: 0.01, defaultValue: 0.19, description: "How live or audience-present the track feels." },
+  {
+    key: "danceability",
+    label: "Danceability",
+    min: 0,
+    max: 1,
+    step: 0.01,
+    defaultValue: 0.61,
+    description: "How movement-friendly the track feels.",
+  },
+  {
+    key: "energy",
+    label: "Energy",
+    min: 0,
+    max: 1,
+    step: 0.01,
+    defaultValue: 0.7,
+    description: "Perceived intensity and drive.",
+  },
+  {
+    key: "valence",
+    label: "Valence",
+    min: 0,
+    max: 1,
+    step: 0.01,
+    defaultValue: 0.52,
+    description: "How positive or bright the mood feels.",
+  },
+  {
+    key: "tempo",
+    label: "Tempo",
+    min: 60,
+    max: 200,
+    step: 1,
+    defaultValue: 123,
+    description: "Estimated beats per minute.",
+  },
+  {
+    key: "loudness",
+    label: "Loudness",
+    min: -20,
+    max: 0,
+    step: 0.1,
+    defaultValue: -5.8,
+    description: "Overall loudness in decibels.",
+  },
+  {
+    key: "acousticness",
+    label: "Acousticness",
+    min: 0,
+    max: 1,
+    step: 0.01,
+    defaultValue: 0.16,
+    description: "Confidence that the track is acoustic.",
+  },
+  {
+    key: "speechiness",
+    label: "Speechiness",
+    min: 0,
+    max: 1,
+    step: 0.01,
+    defaultValue: 0.09,
+    description: "How speech-heavy the vocal delivery is.",
+  },
+  {
+    key: "instrumentalness",
+    label: "Instrumentalness",
+    min: 0,
+    max: 1,
+    step: 0.01,
+    defaultValue: 0.01,
+    description: "Likelihood that the track lacks vocals.",
+  },
+  {
+    key: "liveness",
+    label: "Liveness",
+    min: 0,
+    max: 1,
+    step: 0.01,
+    defaultValue: 0.19,
+    description: "How live or audience-present the track feels.",
+  },
 ];
 
 export const chartedMeans = {

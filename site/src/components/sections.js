@@ -105,31 +105,31 @@ const renderBenchmarkRows = () => {
               <h3>${model.model}</h3>
               <p>${model.note}</p>
             </div>
-            <span class="benchmark-row__chip">${model.model.includes("Logistic") ? "Recommended practical baseline" : "Benchmark"}</span>
+            <span class="benchmark-row__chip">${model.model.includes("Logistic") ? "Best practical choice" : "Comparison model"}</span>
           </header>
           <div class="benchmark-row__metrics">
             <div>
-              <span>ROC-AUC</span>
+              <span>Hit ranking (ROC-AUC)</span>
               <strong>${model.rocAuc.toFixed(4)}</strong>
             </div>
             <div>
-              <span>PR-AUC</span>
+              <span>Rare-hit focus (PR-AUC)</span>
               <strong>${model.prAuc.toFixed(4)}</strong>
             </div>
             <div>
-              <span>Recall</span>
+              <span>Hit recall</span>
               <strong>${model.recall.toFixed(4)}</strong>
             </div>
           </div>
           <div class="dual-meter">
             <div>
-              <span>ROC-AUC</span>
+              <span>Hit ranking</span>
               <div class="meter">
                 <span style="width:${(model.rocAuc / maxRoc) * 100}%"></span>
               </div>
             </div>
             <div>
-              <span>PR-AUC</span>
+              <span>Rare-hit focus</span>
               <div class="meter meter--secondary">
                 <span style="width:${(model.prAuc / maxPr) * 100}%"></span>
               </div>
@@ -151,11 +151,11 @@ const renderRobustnessCards = () =>
           <p>Class ratio: ${tier.classRatio.toFixed(1)} : 1</p>
           <div class="tier-card__stats">
             <div>
-              <span>ROC-AUC</span>
+              <span>Hit ranking</span>
               <strong>${tier.rocAuc.toFixed(4)}</strong>
             </div>
             <div>
-              <span>PR-AUC</span>
+              <span>Rare-hit focus</span>
               <strong>${tier.prAuc.toFixed(4)}</strong>
             </div>
           </div>
@@ -193,10 +193,10 @@ const renderSliders = () =>
 
 const renderLogisticSummary = () => {
   if (logisticModel && Number.isFinite(logisticModel.auc)) {
-    return `AUC landed at <strong>${logisticModel.auc.toFixed(4)}</strong>, with high recall on the charted class and a very interpretable set of coefficients.`;
+    return `Using only audio features, the baseline model could meaningfully separate songs that charted from songs that did not. Its hit-ranking score (AUC) was <strong>${logisticModel.auc.toFixed(4)}</strong>, which is strong enough to show that the sound of a song carries real signal even without marketing, fandom, or artist-fame information.`;
   }
 
-  return "The saved baseline logistic summary is unavailable in the current site data, so this section falls back gracefully instead of failing to render.";
+  return "The saved baseline logistic summary is unavailable in the current site data, so this section explains the result safely instead of failing to render.";
 };
 
 export const renderApp = () => `
@@ -230,9 +230,9 @@ export const renderApp = () => `
         <div class="hero__visual reveal is-visible">
           <div class="hero-deck">
             <article class="hero-panel hero-panel--primary">
-              <span class="hero-panel__label">Core signal</span>
-              <strong>Audio features alone can rank chart success meaningfully.</strong>
-              <p>But the real story gets stronger when the pipeline, matching quality, benchmarks, and robustness work are all shown together.</p>
+              <span class="hero-panel__label">The human question</span>
+              <strong>Can you hear whether a song is likely to become a hit?</strong>
+              <p>This site answers that question by connecting Spotify sound features with Billboard hit history and then explaining the results in plain English.</p>
             </article>
             <article class="hero-panel hero-panel--vinyl">
               <div class="vinyl">
@@ -245,8 +245,8 @@ export const renderApp = () => `
               </div>
             </article>
             <article class="hero-panel hero-panel--floating">
-              <span class="hero-panel__label">Portfolio strength</span>
-              <strong>Data engineering + statistics + storytelling + product UI</strong>
+              <span class="hero-panel__label">Why this project stands out</span>
+              <strong>It was not just a model. It was a full data story.</strong>
             </article>
           </div>
         </div>
@@ -258,11 +258,11 @@ export const renderApp = () => `
 
       <section class="section" id="overview">
         <div class="section-heading reveal">
-          <span class="eyebrow">Project Story</span>
-          <h2>From messy music tables to a premium analytics narrative.</h2>
+          <span class="eyebrow">Start Here</span>
+          <h2>What was I trying to predict, and why should anyone care?</h2>
           <p>
-            The project started as a proposal about EDA, PCA, hypothesis testing, and logistic regression.
-            In reality, it became a deeper product-grade analytics build because the source data had to be merged, defended, enriched, benchmarked, and stress-tested.
+            At the center of the project is one practical question: can the sound of a song tell us anything about whether it reaches the Billboard Hot 100?
+            That matters because artists, labels, marketers, and streaming platforms all want better signals about what resonates, even though creativity and culture still matter far beyond the data.
           </p>
         </div>
         <div class="story-grid">
@@ -272,10 +272,10 @@ export const renderApp = () => `
 
       <section class="section" id="pipeline">
         <div class="section-heading reveal">
-          <span class="eyebrow">Data Pipeline</span>
-          <h2>An analytics pipeline built for scrutiny, not just screenshots.</h2>
+          <span class="eyebrow">How I Built It</span>
+          <h2>Spotify told me how songs sounded. Billboard told me which songs became hits.</h2>
           <p>
-            The site treats the workflow as a product system: source tables, merge safety, cleaning, modeling, enrichment, time sensitivity, benchmarking, and robustness.
+            Those two worlds did not arrive neatly connected. Before any chart, test, or model could be trusted, I had to build the dataset carefully and avoid bad matches.
           </p>
         </div>
         <div class="pipeline-grid">
@@ -285,8 +285,8 @@ export const renderApp = () => `
 
       <section class="section" id="findings">
         <div class="section-heading reveal">
-          <span class="eyebrow">Interactive Findings</span>
-          <h2>The strongest signals, translated into human language.</h2>
+          <span class="eyebrow">What I Found</span>
+          <h2>What did hit songs sound like, and what did the models learn?</h2>
           <p>
             Instead of dropping raw tables on the page, this section turns the project’s saved figures and summary outputs into a guided tour of the main evidence.
           </p>
@@ -295,8 +295,8 @@ export const renderApp = () => `
         <div class="findings-layout">
           <article class="glass-card findings-card findings-card--wide reveal">
             <header class="findings-card__header">
-              <span class="eyebrow">EDA</span>
-              <h3>Charted songs are louder, less acoustic, and more tightly produced.</h3>
+              <span class="eyebrow">First Look</span>
+              <h3>Before any modeling, hit songs already sounded different.</h3>
             </header>
             <div class="findings-card__copy">
               ${edaHighlights
@@ -324,11 +324,11 @@ export const renderApp = () => `
 
           <article class="glass-card findings-card reveal">
             <header class="findings-card__header">
-              <span class="eyebrow">Hypothesis Testing</span>
-              <h3>All nine features are significant. The differences are not equally important.</h3>
+              <span class="eyebrow">Trust Check</span>
+              <h3>Those differences were not just random noise.</h3>
             </header>
             <p class="findings-card__lede">
-              Big sample sizes can make everything significant. Effect size is what keeps the story honest.
+              This step checked that the patterns were strong enough to take seriously, not just artifacts of a huge dataset.
             </p>
             <div class="effect-rows">
               ${renderHypothesisBars()}
@@ -337,8 +337,8 @@ export const renderApp = () => `
 
           <article class="glass-card findings-card reveal">
             <header class="findings-card__header">
-              <span class="eyebrow">PCA</span>
-              <h3>Five components explain 80.5% of the audio feature space.</h3>
+              <span class="eyebrow">Hidden Patterns</span>
+              <h3>When the sound features were compressed, one big pattern stood out.</h3>
             </header>
             <p class="findings-card__lede">${pcaSummary.pc1Story}</p>
             <div class="figure-grid">
@@ -351,8 +351,8 @@ export const renderApp = () => `
 
           <article class="glass-card findings-card reveal">
             <header class="findings-card__header">
-              <span class="eyebrow">Logistic Regression</span>
-              <h3>The baseline model is still the project's clearest practical model.</h3>
+              <span class="eyebrow">Prediction</span>
+              <h3>Could those sound clues actually help predict whether a song charts?</h3>
             </header>
             <p class="findings-card__lede">
               ${renderLogisticSummary()}
@@ -367,8 +367,8 @@ export const renderApp = () => `
 
           <article class="glass-card findings-card reveal">
             <header class="findings-card__header">
-              <span class="eyebrow">Enrichment</span>
-              <h3>Data engineering improved the target class before any new model was tried.</h3>
+              <span class="eyebrow">Data Quality</span>
+              <h3>A stronger dataset made the whole story more believable.</h3>
             </header>
             <div class="stat-stack">
               <div>
@@ -385,7 +385,7 @@ export const renderApp = () => `
               </div>
             </div>
             <p class="findings-card__lede">
-              Most of the gain came from deterministic title normalization, not aggressive fuzzy matching. That makes the enrichment story stronger academically.
+              Before trying fancier modeling, I first improved the set of confirmed chart songs so the project rested on a better foundation.
             </p>
           </article>
         </div>
@@ -393,10 +393,10 @@ export const renderApp = () => `
 
       <section class="section" id="dashboard">
         <div class="section-heading reveal">
-          <span class="eyebrow">Model Results Dashboard</span>
-          <h2>More models were tried. Logistic still stayed the best overall practical choice.</h2>
+          <span class="eyebrow">Simple vs Complex</span>
+          <h2>Did a fancier model beat the simpler one?</h2>
           <p>
-            The benchmark suite tested whether more flexible algorithms could materially outperform the enriched logistic baseline. They did not.
+            I tested that directly. Think of ROC-AUC as a ranking score: higher means the model is better at placing real chart songs above non-chart songs. PR-AUC is stricter because actual chart songs are rare in the data.
           </p>
         </div>
         <div class="dashboard-grid">
@@ -406,11 +406,11 @@ export const renderApp = () => `
           <aside class="dashboard-grid__aside">
             <figure class="media-card reveal">
               <img src="${figurePaths.benchmarkAuc}" alt="Benchmark ROC-AUC comparison" />
-              <figcaption>ROC-AUC stays clustered tightly around the enriched logistic baseline, with no meaningful winner over logistic.</figcaption>
+              <figcaption>The more complex models stayed close to the simpler baseline instead of clearly beating it.</figcaption>
             </figure>
             <figure class="media-card reveal">
               <img src="${figurePaths.benchmarkPr}" alt="Benchmark precision recall curves" />
-              <figcaption>Random forest edges out PR-AUC, but not enough to justify the extra complexity as the project's main model.</figcaption>
+              <figcaption>One model edged ahead on a harder rare-hit metric, but not enough to outweigh the simplicity of logistic regression.</figcaption>
             </figure>
           </aside>
         </div>
@@ -419,14 +419,14 @@ export const renderApp = () => `
       <section class="section section--spotlight" id="era-drift">
         <div class="section-heading reveal">
           <span class="eyebrow">The Shifting Sound of Success</span>
-          <h2>Music-history storytelling with cautious statistics.</h2>
+          <h2>Did the sound of success stay the same from 1999 to 2019?</h2>
           <p>
-            The time layer had to be built honestly: non-charted songs do not carry trustworthy years in the saved project files, so the model switches to chart-only top-10 prediction within each era.
+            I also wanted to know whether the audio recipe linked with success stayed stable or changed as music trends changed.
           </p>
         </div>
         <div class="spotlight-grid">
           <div class="spotlight-copy glass-card reveal">
-            <h3>Moderate evidence of drift, not overclaiming.</h3>
+            <h3>Some parts of the formula moved over time.</h3>
             <p>${eraDrift.conclusion}</p>
             <ul class="detail-list">
               ${eraDrift.takeaways.map((item) => `<li>${item}</li>`).join("")}
@@ -461,8 +461,8 @@ export const renderApp = () => `
 
       <section class="section" id="robustness">
         <div class="section-heading reveal">
-          <span class="eyebrow">Professor-Proof Section</span>
-          <h2>The conclusions survive stricter and broader dataset constructions.</h2>
+          <span class="eyebrow">Trust Check</span>
+          <h2>Would the story still hold if the dataset was built a little differently?</h2>
           <p>
             This is the defense against the “one arbitrary dataset” criticism. The project was rechecked across conservative, enriched, and high-confidence tiers.
           </p>
@@ -472,23 +472,23 @@ export const renderApp = () => `
         </div>
         <div class="robustness-layout">
           <div class="glass-card reveal">
-            <h3>Main defense</h3>
+            <h3>Why this makes the project stronger</h3>
             <p>${robustness.conclusion}</p>
             <p>${robustness.note}</p>
             <ul class="detail-list">
-              <li>All 9 hypothesis-test directions stayed the same across tiers.</li>
-              <li>All 9 logistic coefficient signs stayed the same across tiers.</li>
-              <li>PCA interpretation stayed identical because the feature matrix stayed the same and only labels changed.</li>
+              <li>The direction of the main findings stayed the same across all tiers.</li>
+              <li>The main predictor signs stayed the same across all tiers.</li>
+              <li>The broader sound-pattern story stayed the same too.</li>
             </ul>
           </div>
           <div class="robustness-media">
             <figure class="media-card reveal">
               <img src="${figurePaths.robustnessAuc}" alt="Robustness AUC comparison" />
-              <figcaption>ROC-AUC stays in a tight band across dataset tiers.</figcaption>
+              <figcaption>The hit-ranking score stayed in a tight band across dataset tiers.</figcaption>
             </figure>
             <figure class="media-card reveal">
               <img src="${figurePaths.robustnessEffects}" alt="Robustness effect size comparison" />
-              <figcaption>The loudness / acousticness / instrumentalness story remains intact across tiers.</figcaption>
+              <figcaption>The loudness, acousticness, and instrumentalness story remained intact across tiers.</figcaption>
             </figure>
           </div>
         </div>
@@ -496,11 +496,10 @@ export const renderApp = () => `
 
       <section class="section section--explorer" id="explorer">
         <div class="section-heading reveal">
-          <span class="eyebrow">Song Profile Explorer</span>
-          <h2>Build a track profile and see how it scores against the baseline chart model.</h2>
+          <span class="eyebrow">Try It Yourself</span>
+          <h2>What kind of chart profile does a song like this create?</h2>
           <p>
-            This panel uses the exact published Step 5 logistic coefficients to create a chart-profile score.
-            It is useful as a relative profile estimator, not as a calibrated hit probability.
+            Move the sliders to see how a song's audio traits compare with the average charted and non-charted profile. This is a learning tool based on the saved model, not a promise that a song will become a hit.
           </p>
         </div>
 
@@ -540,7 +539,7 @@ export const renderApp = () => `
 
             <div class="disclaimer">
               <strong>Method note</strong>
-              <p>This explorer uses exact published coefficients from the validated baseline logistic model. The score is a relative ranking signal, not a calibrated probability of commercial success.</p>
+              <p>This explorer uses the published baseline model to show relative chart fit. It is helpful for intuition, not for guaranteeing commercial success.</p>
             </div>
           </aside>
         </div>
@@ -548,25 +547,27 @@ export const renderApp = () => `
 
       <section class="section" id="methodology">
         <div class="section-heading reveal">
-          <span class="eyebrow">About / Methodology</span>
-          <h2>Built like an analytics product, written with methodological honesty.</h2>
+          <span class="eyebrow">Why It Matters</span>
+          <h2>What does all of this mean in the real world?</h2>
           <p>
-            The website is designed to feel premium, but the analysis stays grounded in the real limits of the data and the saved project outputs.
+            The point is not that data can manufacture a hit. The point is that some parts of chart success are measurable and useful when they are paired with human judgment.
           </p>
         </div>
         <div class="method-grid">
           <article class="glass-card reveal">
-            <h3>Tools used</h3>
+            <h3>Who this can help</h3>
             <div class="chip-grid">
-              ${methodology.tools.map((tool) => `<span class="chip">${tool}</span>`).join("")}
+              ${methodology.audiences.map((group) => `<span class="chip">${group}</span>`).join("")}
             </div>
+            <p>${methodology.audienceText}</p>
           </article>
           <article class="glass-card reveal">
-            <h3>Methodological honesty</h3>
+            <h3>What the results mean</h3>
+            <p>${methodology.meaning}</p>
             <p>${methodology.honesty}</p>
           </article>
           <article class="glass-card reveal">
-            <h3>Limitation worth remembering</h3>
+            <h3>What the results do not mean</h3>
             <p>${methodology.limitation}</p>
           </article>
         </div>
