@@ -9,10 +9,37 @@ import {
   buildProfileAssessment,
   CHARTED_PROFILE,
   DEFAULT_PROFILE,
+  ESTIMATOR_AVAILABLE,
   NON_CHARTED_PROFILE,
 } from "./utils/estimator.js";
 
-document.querySelector("#app").innerHTML = renderApp();
+const appRoot = document.querySelector("#app");
+
+const renderSiteFallback = (message) => {
+  appRoot.innerHTML = `
+    <div class="site-shell">
+      <main>
+        <section class="section section--flush">
+          <article class="glass-card reveal is-visible">
+            <span class="eyebrow">Site Fallback</span>
+            <h1>Signals of Success</h1>
+            <p>${message}</p>
+            <p>The rest of the repository and the static assets are still intact, but this page hit a runtime issue while rendering.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  `;
+};
+
+try {
+  appRoot.innerHTML = renderApp();
+} catch (error) {
+  console.error("Site render failed.", error);
+  renderSiteFallback(
+    "The page hit a runtime error while assembling the main view. A visible fallback has been rendered so the site no longer fails as a blank screen.",
+  );
+}
 
 const updateBodyLoaded = () => {
   requestAnimationFrame(() => {
@@ -116,6 +143,39 @@ const renderContributionItems = (items, fallbackText) => {
     .join("");
 };
 
+const renderEstimatorUnavailable = (message) => {
+  const scoreValue = document.querySelector("#score-value");
+  const scoreLabel = document.querySelector("#score-label");
+  const scoreNote = document.querySelector("#score-note");
+  const tailwindsList = document.querySelector("#tailwinds-list");
+  const headwindsList = document.querySelector("#headwinds-list");
+  const scoreOrb = document.querySelector("#score-orb");
+
+  if (!scoreValue || !scoreLabel || !scoreNote || !tailwindsList || !headwindsList) {
+    return;
+  }
+
+  scoreValue.textContent = "--";
+  scoreLabel.textContent = "Estimator unavailable";
+  scoreNote.textContent = message;
+
+  if (scoreOrb) {
+    scoreOrb.style.setProperty("--score-angle", "0deg");
+  }
+
+  tailwindsList.innerHTML =
+    '<div class="contribution-card"><strong>Estimator data unavailable</strong><p>The page still loads, but the interactive score is disabled until the saved model metadata is restored.</p></div>';
+
+  headwindsList.innerHTML =
+    '<div class="contribution-card"><strong>Fallback mode active</strong><p>The rest of the site remains available so the project story and figures do not disappear behind a blank screen.</p></div>';
+
+  [...document.querySelectorAll("[data-feature-input], [data-preset]")].forEach(
+    (node) => {
+      node.disabled = true;
+    },
+  );
+};
+
 const setupEstimator = () => {
   const inputs = [...document.querySelectorAll("[data-feature-input]")];
   const scoreValue = document.querySelector("#score-value");
@@ -124,6 +184,25 @@ const setupEstimator = () => {
   const tailwindsList = document.querySelector("#tailwinds-list");
   const headwindsList = document.querySelector("#headwinds-list");
   const scoreOrb = document.querySelector("#score-orb");
+
+  if (
+    !inputs.length ||
+    !scoreValue ||
+    !scoreLabel ||
+    !scoreNote ||
+    !tailwindsList ||
+    !headwindsList ||
+    !scoreOrb
+  ) {
+    return;
+  }
+
+  if (!ESTIMATOR_AVAILABLE) {
+    renderEstimatorUnavailable(
+      "The saved baseline logistic model metadata could not be loaded, so the explorer is shown in a safe fallback state.",
+    );
+    return;
+  }
 
   const getProfile = () =>
     Object.fromEntries(
@@ -149,7 +228,17 @@ const setupEstimator = () => {
 
   const updateEstimator = () => {
     syncReadouts();
-    const assessment = buildProfileAssessment(getProfile());
+    let assessment;
+
+    try {
+      assessment = buildProfileAssessment(getProfile());
+    } catch (error) {
+      console.error("Estimator update failed.", error);
+      renderEstimatorUnavailable(
+        "A runtime error interrupted the chart-profile estimator, so the explorer has been disabled instead of crashing the whole page.",
+      );
+      return;
+    }
 
     scoreValue.textContent = assessment.displayScore.toFixed(1);
     scoreLabel.textContent = assessment.label;

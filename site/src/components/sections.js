@@ -7,6 +7,7 @@ import {
   figurePaths,
   heroMetrics,
   hypothesisFeatures,
+  logisticModel,
   methodology,
   navItems,
   pcaSummary,
@@ -190,6 +191,14 @@ const renderSliders = () =>
     )
     .join("");
 
+const renderLogisticSummary = () => {
+  if (logisticModel && Number.isFinite(logisticModel.auc)) {
+    return `AUC landed at <strong>${logisticModel.auc.toFixed(4)}</strong>, with high recall on the charted class and a very interpretable set of coefficients.`;
+  }
+
+  return "The saved baseline logistic summary is unavailable in the current site data, so this section falls back gracefully instead of failing to render.";
+};
+
 export const renderApp = () => `
   <div class="site-shell">
     <div class="ambient ambient--one" aria-hidden="true"></div>
@@ -346,7 +355,7 @@ export const renderApp = () => `
               <h3>The baseline model is still the project's clearest practical model.</h3>
             </header>
             <p class="findings-card__lede">
-              AUC landed at <strong>${logisticModel.auc.toFixed(4)}</strong>, with high recall on the charted class and a very interpretable set of coefficients.
+              ${renderLogisticSummary()}
             </p>
             <div class="figure-grid">
               <figure class="media-card">
